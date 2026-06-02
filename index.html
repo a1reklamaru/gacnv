@@ -1,0 +1,1173 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>ГАК Нижневартовск | Дашборд эффективности</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #647084;
+      --line: #d9e1ec;
+      --panel: #ffffff;
+      --page: #f5f7fb;
+      --blue: #2d6cdf;
+      --blue-soft: #e7f0ff;
+      --green: #129766;
+      --green-soft: #dff5ec;
+      --red: #d64545;
+      --red-soft: #fde8e8;
+      --amber: #d99524;
+      --amber-soft: #fff1d8;
+      --violet: #7156c6;
+      --shadow: 0 18px 42px rgba(29, 45, 73, .09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      letter-spacing: 0;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 28px 0 22px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.15;
+      font-weight: 800;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .report-link {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: 8px;
+      padding: 8px 11px;
+      border: 1px solid rgba(45, 108, 223, .28);
+      border-radius: 8px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 13px;
+      text-decoration: none;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .report-link:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 12px 24px rgba(45, 108, 223, .14);
+    }
+
+    .agency {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      margin-bottom: 10px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 10px 24px rgba(29, 45, 73, .06);
+    }
+
+    .agency::before {
+      content: "";
+      display: block;
+      width: 154px;
+      height: 58px;
+      flex: 0 0 154px;
+      background: center / contain no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='308' height='116' viewBox='0 0 308 116'%3E%3Crect width='308' height='116' fill='white'/%3E%3Cg transform='translate(18 24)' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M45 9c-20 0-36 15-36 35 0 14 8 26 20 32' stroke='%23f6c33b' stroke-width='8'/%3E%3Cpath d='M45 22c-13 0-23 10-23 23 0 8 4 15 10 20' stroke='%234aa8e8' stroke-width='7'/%3E%3Cpath d='M43 35c-6 0-11 5-11 11 0 5 3 9 7 11' stroke='%23f6c33b' stroke-width='6'/%3E%3Cpath d='M35 66l-14 14' stroke='%234aa8e8' stroke-width='8'/%3E%3C/g%3E%3Ctext x='63' y='80' font-family='Arial, Helvetica, sans-serif' font-size='30' font-weight='800' fill='%23f5b22a'%3EA1%3C/text%3E%3Ctext x='99' y='34' font-family='Arial, Helvetica, sans-serif' font-size='15' font-weight='700' fill='%236b778c'%3E%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D0%BE%D0%B5 %D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D1%81%D1%82%D0%B2%D0%BE%3C/text%3E%3Ctext x='100' y='60' font-family='Arial, Helvetica, sans-serif' font-size='32' font-weight='900' fill='%23f5b22a'%3E%D0%98%D0%9D%D0%A2%D0%95%D0%A0%D0%9D%D0%95%D0%A2%3C/text%3E%3Ctext x='101' y='88' font-family='Arial, Helvetica, sans-serif' font-size='30' font-weight='900' fill='%234aa8e8'%3E%D0%AD%D0%9A%D0%A1%D0%9F%D0%95%D0%A0%D0%A2%3C/text%3E%3C/svg%3E");
+    }
+
+    .agency img {
+      display: block;
+      width: 330px;
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .agency .agency-copy {
+      display: none;
+    }
+
+    .agency::before {
+      content: none;
+    }
+
+    .agency span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .agency strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 17px;
+      line-height: 1.1;
+      color: var(--ink);
+    }
+
+    main {
+      padding: 18px 0 34px;
+    }
+
+    .month-switcher {
+      margin-bottom: 14px;
+      padding: 12px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .month-switcher h2 {
+      margin: 0 0 4px;
+      font-size: 19px;
+    }
+
+    .month-switcher p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.35;
+      font-size: 13px;
+    }
+
+    .calendar-filter {
+      display: grid;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .calendar-year {
+      display: grid;
+      grid-template-columns: 54px 74px 1fr;
+      gap: 6px;
+      align-items: stretch;
+      padding: 7px;
+      border: 1px solid #e1e9f4;
+      border-radius: 8px;
+      background: #fbfdff;
+    }
+
+    .calendar-year-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #eef4fb;
+      color: #22314c;
+      font-size: 18px;
+      min-height: 42px;
+      font-weight: 900;
+    }
+
+    .calendar-months {
+      display: flex;
+      flex-wrap: wrap;
+      align-content: flex-start;
+      gap: 6px;
+    }
+
+    .period-filter {
+      display: grid;
+      grid-template-columns: minmax(260px, 420px) 1fr;
+      gap: 12px;
+      align-items: start;
+      margin-top: 10px;
+    }
+
+    .period-dropdown {
+      position: relative;
+    }
+
+    .period-trigger {
+      appearance: none;
+      position: relative;
+      width: 100%;
+      min-height: 56px;
+      padding: 10px 44px 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--ink);
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      box-shadow: 0 12px 28px rgba(47, 72, 105, .08);
+      transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+    }
+
+    .period-trigger::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      top: 22px;
+      width: 9px;
+      height: 9px;
+      border-right: 2px solid var(--blue);
+      border-bottom: 2px solid var(--blue);
+      transform: rotate(45deg);
+      transition: transform .18s ease;
+    }
+
+    .period-trigger[aria-expanded="true"]::after {
+      transform: translateY(4px) rotate(225deg);
+    }
+
+    .period-trigger:hover,
+    .period-trigger[aria-expanded="true"] {
+      border-color: rgba(45, 108, 223, .4);
+      box-shadow: 0 18px 34px rgba(45, 108, 223, .13);
+      transform: translateY(-1px);
+    }
+
+    .period-trigger strong,
+    .period-trigger small {
+      display: block;
+    }
+
+    .period-trigger strong {
+      font-size: 16px;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .period-trigger small {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .period-menu {
+      position: absolute;
+      z-index: 20;
+      left: 0;
+      top: calc(100% + 8px);
+      width: min(720px, calc(100vw - 48px));
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 24px 50px rgba(23, 32, 51, .18);
+    }
+
+    .period-menu[hidden] {
+      display: none;
+    }
+
+    .period-group + .period-group {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    .period-group-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .period-year {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .period-options {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(78px, 1fr));
+      gap: 6px;
+    }
+
+    .period-option {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 6px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #eef4fb;
+      color: var(--ink);
+      cursor: pointer;
+      touch-action: manipulation;
+      user-select: none;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
+      transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .period-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .period-option span,
+    .period-option small {
+      display: block;
+    }
+
+    .period-option small {
+      margin-top: 1px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .period-option:hover,
+    .period-option.active {
+      background: var(--green-soft);
+      border-color: rgba(18, 151, 102, .38);
+      color: var(--green);
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 14px 26px rgba(18, 151, 102, .12);
+    }
+
+    .period-option.year-option {
+      min-width: 96px;
+      background: #ffffff;
+      color: var(--blue);
+    }
+
+    .selected-periods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      min-height: 56px;
+      align-content: flex-start;
+      padding: 2px 0;
+    }
+
+    .selected-periods-wrap {
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .period-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .period-clear {
+      appearance: none;
+      min-height: 28px;
+      padding: 5px 10px;
+      border: 1px solid rgba(214, 69, 69, .22);
+      border-radius: 999px;
+      background: var(--red-soft);
+      color: var(--red);
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 900;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .period-clear:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 12px 24px rgba(214, 69, 69, .12);
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .card,
+    .chart-card,
+    .table-card,
+    .month {
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    .month-explorer {
+      margin-bottom: 14px;
+      padding: 14px;
+    }
+
+    .month-actions {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+      gap: 8px;
+      margin: 12px 0;
+    }
+
+    .month-actions.compact {
+      margin: 0;
+    }
+
+    .year-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .year-btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--ink);
+      padding: 9px 18px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 900;
+      transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .year-btn:hover,
+    .year-btn.active {
+      background: var(--blue-soft);
+      border-color: rgba(45, 108, 223, .35);
+      color: var(--blue);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 18px 34px rgba(45, 108, 223, .14);
+    }
+
+    .month-btn {
+      appearance: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #eef4fb;
+      color: var(--ink);
+      width: 70px;
+      min-height: 40px;
+      padding: 5px 4px;
+      cursor: pointer;
+      text-align: center;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 900;
+      transition: background .18s ease, border-color .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease;
+    }
+
+    .month-btn small {
+      display: block;
+      margin-top: 1px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .month-btn[data-range="year"] {
+      width: 74px;
+    }
+
+    .month-btn:hover,
+    .month-btn.active {
+      background: var(--green-soft);
+      border-color: rgba(18, 151, 102, .35);
+      color: var(--green);
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 18px 34px rgba(18, 151, 102, .14);
+    }
+
+    .month-panel {
+      display: none;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      overflow: hidden;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .month-panel.active {
+      display: block;
+    }
+
+    .month-panel:hover,
+    .card:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 20px 42px rgba(29, 45, 73, .12);
+    }
+
+    .panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 14px;
+      background: #f7fbff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .panel-head h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .panel-body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .mini-stats,
+    .month-comment {
+      padding: 12px 14px;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 6px;
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .mini-stat {
+      min-height: 58px;
+      padding: 8px 6px;
+      border-radius: 8px;
+      background: #f8fbff;
+      text-align: center;
+    }
+
+    .mini-stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .mini-stat strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 15px;
+      line-height: 1.15;
+    }
+
+    .month-comment h4 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .month-comment p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.42;
+    }
+
+    .campaign-list {
+      margin-top: 10px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      display: none;
+    }
+
+    .month-comment.campaigns-open .campaign-list {
+      display: block;
+    }
+
+    .campaign-toggle {
+      appearance: none;
+      margin-top: 10px;
+      border: 1px solid rgba(45, 108, 223, .28);
+      border-radius: 8px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      padding: 8px 12px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .campaign-toggle:hover {
+      transform: translateY(-1px) scale(1.01);
+      box-shadow: 0 12px 24px rgba(45, 108, 223, .14);
+    }
+
+    .campaign-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .campaign-table th {
+      padding: 7px 8px;
+      background: #eef4fb;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.25;
+      text-align: left;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .campaign-table td {
+      padding: 7px 8px;
+      border-top: 1px solid var(--line);
+      vertical-align: middle;
+      font-size: 13px;
+      line-height: 1.25;
+    }
+
+    .campaign-name {
+      color: var(--ink);
+      font-weight: 700;
+      width: auto;
+    }
+
+    .campaign-leads {
+      width: 92px;
+      color: var(--green);
+      font-weight: 800;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .campaign-cpa {
+      width: 126px;
+      color: var(--ink);
+      font-weight: 800;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .campaign-cpa span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .table-card {
+      overflow: hidden;
+    }
+
+    .table-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 18px 12px;
+      gap: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      border-top: 1px solid var(--line);
+      padding: 12px 10px;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 1.35;
+    }
+
+    th {
+      background: #eef4fb;
+      color: #33425c;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    td:first-child,
+    th:first-child {
+      text-align: left;
+      width: 20%;
+    }
+
+    .conversion {
+      background: var(--green-soft);
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .good-text {
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .bad-text {
+      color: var(--red);
+      font-weight: 800;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 980px) {
+      .month-switcher,
+      .kpis,
+      .month-actions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .calendar-year {
+        grid-template-columns: 54px 74px 1fr;
+      }
+
+      .period-filter {
+        grid-template-columns: 1fr;
+      }
+
+      .period-menu {
+        width: min(720px, calc(100vw - 36px));
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .charts-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-body {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-stats {
+        grid-template-columns: repeat(3, 1fr);
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 20px, 1180px);
+      }
+
+      .topbar {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .kpis,
+      .month-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .month-switcher {
+        display: block;
+      }
+
+      .calendar-year {
+        grid-template-columns: 1fr;
+      }
+
+      .period-menu {
+        position: static;
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      .period-group-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .period-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .calendar-months {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .month-btn,
+      .month-btn[data-range="year"] {
+        width: 100%;
+      }
+
+      .agency {
+        width: 100%;
+      }
+
+      .agency::before {
+        width: 138px;
+        height: 52px;
+        flex-basis: 138px;
+      }
+
+      .chart-head,
+      .table-title {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .chart {
+        height: 245px;
+      }
+
+      .table-card {
+        overflow-x: auto;
+      }
+
+      table {
+        min-width: 780px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="agency">
+          <img src="a1-internet-expert-logo.png" alt="A1 Интернет Эксперт">
+          <div class="agency-copy">
+            <span>Кампании ведет</span>
+            <strong>а1 Интернет Эксперт</strong>
+          </div>
+        </div>
+        <h1>ГАК Нижневартовск: дашборд эффективности рекламы</h1>
+        <div class="subtitle">Сводная динамика Яндекс-рекламы по ключевым показателям: лиды, CPA, CPC, CTR и бюджет.</div>
+        <a class="report-link" href="https://docs.google.com/spreadsheets/d/1gybWsla5rKhPcGaBJ8yor8woSSa3kzdn4loUMcBoEoc/edit" target="_blank" rel="noopener">Открыть Google-таблицу отчета</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="month-switcher" aria-label="Выбор периода для статистики">
+      <div>
+        <h2>Фильтр периода</h2>
+        <p data-selection-summary>Период: период не выбран. Можно сравнивать месяцы из разных лет.</p>
+      </div>
+      <div class="period-filter">
+        <div class="period-dropdown">
+          <button class="period-trigger" type="button" data-period-trigger aria-expanded="false" aria-controls="periodMenu">
+            <strong>период не выбран</strong>
+            <small>Открыть выбор года и месяцев</small>
+          </button>
+          <div class="period-menu" id="periodMenu" data-period-menu hidden>
+            <button class="period-clear" type="button" data-clear-period>Без выбора</button>
+            <div class="period-group">
+              <div class="period-group-head">
+                <div class="period-year">2025</div>
+                <label class="period-option year-option"><input type="checkbox" data-range="year" data-year="2025"> <span>Весь год<small>2025</small></span></label>
+              </div>
+              <div class="period-options">
+                <label class="period-option"><input type="checkbox" data-month="dec25" data-year="2025"> <span>дек.<small>20 лидов</small></span></label>
+              </div>
+            </div>
+            <div class="period-group">
+              <div class="period-group-head">
+                <div class="period-year">2026</div>
+                <label class="period-option year-option"><input type="checkbox" data-range="year" data-year="2026"> <span>Весь год<small>2026</small></span></label>
+              </div>
+              <div class="period-options">
+                <label class="period-option"><input type="checkbox" data-month="jan26" data-year="2026"> <span>янв.<small>11 лидов</small></span></label>
+                <label class="period-option"><input type="checkbox" data-month="feb26" data-year="2026"> <span>фев.<small>18 лидов</small></span></label>
+                <label class="period-option"><input type="checkbox" data-month="mar26" data-year="2026"> <span>мар.<small>13 лидов</small></span></label>
+                <label class="period-option"><input type="checkbox" data-month="apr26" data-year="2026"> <span>апр.<small>16 лидов</small></span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="selected-periods-wrap">
+          <div class="selected-periods" data-selected-chips aria-label="Выбранные периоды"></div>
+          <button class="period-clear" type="button" data-clear-period>Без выбора</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="kpis" aria-label="Главные показатели">
+      <article class="card"><div class="label">Расход</div><div class="value" data-kpi="spend">0 ₽</div><div class="note" data-kpi-note="spend">Сумма за период</div></article>
+      <article class="card"><div class="label">Конверсии</div><div class="value" data-kpi="conv">0</div><div><span class="trend good" data-kpi-note="conv">Всего лидов</span></div></article>
+      <article class="card"><div class="label">CPA</div><div class="value" data-kpi="cpa">0 ₽</div><div><span class="trend neutral" data-kpi-note="cpa">CPA по выбранным месяцам</span></div></article>
+      <article class="card"><div class="label">CPC</div><div class="value" data-kpi="cpc">0 ₽</div><div><span class="trend good" data-kpi-note="cpc">CPC по выбранным месяцам</span></div></article>
+    </section>
+
+    <section class="charts-grid" aria-label="Графики эффективности">
+      <article class="chart-card"><div class="chart-head"><div><h2>Показы и клики</h2><div class="chart-sub">Динамика объема трафика по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--blue)"></i>Показы</span><span><i style="background: var(--teal)"></i>Клики</span></div></div><svg id="trafficVolumeChart" class="chart" role="img" aria-label="Динамика показов и кликов"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>Расход</h2><div class="chart-sub">Динамика рекламного бюджета.</div></div><div class="legend"><span><i style="background: var(--amber)"></i>Расход</span></div></div><svg id="spendChart" class="chart" role="img" aria-label="Расход"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>Конверсии</h2><div class="chart-sub">Количество лидов по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--green)"></i>Конверсии</span></div></div><svg id="conversionsChart" class="chart" role="img" aria-label="Конверсии"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>Цена конверсии</h2><div class="chart-sub">CPA по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--red)"></i>CPA</span></div></div><svg id="cpaChart" class="chart" role="img" aria-label="Цена конверсии"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>CTR и CPC</h2><div class="chart-sub">Качество и стоимость трафика.</div></div><div class="legend"><span><i style="background: var(--violet)"></i>CTR</span><span><i style="background: var(--amber)"></i>CPC</span></div></div><svg id="qualityChart" class="chart" role="img" aria-label="CTR и CPC"></svg><div class="chart-tooltip" hidden></div></article>
+    </section>
+
+    <section class="table-card">
+      <div class="table-title"><h2>Сводная таблица эффективности</h2><span class="trend neutral">Конверсия выделена зеленым</span></div>
+      <table><thead><tr><th>Месяц</th><th>Показы</th><th>Клики</th><th>CTR, %</th><th>Расход, ₽</th><th>CPC, ₽</th><th>Конверсия</th><th>CPA, ₽</th><th>Оценка</th></tr></thead><tbody id="summaryRows"></tbody></table>
+    </section>
+
+    <section class="chart-card month-explorer" aria-label="Статистика по месяцам">
+      <div class="chart-head"><div><h2>Статистика и выводы по месяцам</h2><div class="chart-sub">Детальные выводы показываются по месяцам, выбранным в верхнем фильтре.</div></div></div>
+      
+      <div class="month-panel" data-panel="dec25" data-year="2025" role="tabpanel">
+        <div class="panel-head">
+          <div><h3>Декабрь 2025</h3><div class="panel-period">01.12.2025 - 31.12.2025</div></div>
+          <span class="trend neutral">Старт</span>
+        </div>
+        <div class="panel-body">
+          <div class="mini-stats">
+            <div class="mini-stat"><span>Показы</span><strong>186 724</strong></div>
+            <div class="mini-stat"><span>Клики</span><strong>2 461</strong></div>
+            <div class="mini-stat"><span>Расход</span><strong>99 470,86 ₽</strong></div>
+            <div class="mini-stat conversion"><span>Конверсия</span><strong>20</strong></div>
+            <div class="mini-stat"><span>CPC</span><strong>40,42 ₽</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,32%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>Вывод</h4>
+            <p>Базовый месяц для сравнения: фиксируем стартовые показатели по лидам и CPA. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 1268.80 руб. Проверить кампании: высокий CPA: Конкуренты ГАК РСЯ; без лидов: ГАК РСЯ, gac-nv.ru от 05.11.25, Конкуренты ГАК поиск.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>Кампания</th><th>Лиды</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-leads">10 лидов</td><td class="campaign-cpa"><span>CPA</span>6 989,63 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-leads">0 лидов</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">gac-nv.ru от 05.11.25</td><td class="campaign-leads">0 лидов</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-leads">9 лидов</td><td class="campaign-cpa"><span>CPA</span>1 268,80 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК поиск</td><td class="campaign-leads">0 лидов</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-leads">1 лид</td><td class="campaign-cpa"><span>CPA</span>18 129,85 ₽</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="month-panel" data-panel="jan26" data-year="2026" role="tabpanel">
+        <div class="panel-head">
+          <div><h3>Январь 2026</h3><div class="panel-period">01.01.2026 - 31.01.2026</div></div>
+          <span class="trend bad">+10,4% CPA</span>
+        </div>
+        <div class="panel-body">
+          <div class="mini-stats">
+            <div class="mini-stat"><span>Показы</span><strong>109 657</strong></div>
+            <div class="mini-stat"><span>Клики</span><strong>1 719</strong></div>
+            <div class="mini-stat"><span>Расход</span><strong>60 384,37 ₽</strong></div>
+            <div class="mini-stat conversion"><span>Конверсия</span><strong>11</strong></div>
+            <div class="mini-stat"><span>CPC</span><strong>35,13 ₽</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,57%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>Вывод</h4>
+            <p>К предыдущему месяцу: лиды -45%, CPA +10%. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 2217.15 руб. Проверить кампании: без лидов: Конкуренты ГАК РСЯ.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>Кампания</th><th>Лиды</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-leads">5 лидов</td><td class="campaign-cpa"><span>CPA</span>7 059,48 ₽</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-leads">6 лидов</td><td class="campaign-cpa"><span>CPA</span>2 217,15 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-leads">0 лидов</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="month-panel" data-panel="feb26" data-year="2026" role="tabpanel">
+        <div class="panel-head">
+          <div><h3>Февраль 2026</h3><div class="panel-period">01.02.2026 - 28.02.2026</div></div>
+          <span class="trend bad">+2,8% CPA</span>
+        </div>
+        <div class="panel-body">
+          <div class="mini-stats">
+            <div class="mini-stat"><span>Показы</span><strong>227 514</strong></div>
+            <div class="mini-stat"><span>Клики</span><strong>3 179</strong></div>
+            <div class="mini-stat"><span>Расход</span><strong>101 529,40 ₽</strong></div>
+            <div class="mini-stat conversion"><span>Конверсия</span><strong>18</strong></div>
+            <div class="mini-stat"><span>CPC</span><strong>31,94 ₽</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,40%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>Вывод</h4>
+            <p>К предыдущему месяцу: лиды +64%, CPA +3%. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 2928.00 руб. Проверить кампании: высокий CPA: ГАК поиск, Конкуренты ГАК РСЯ; без лидов: ГАК РСЯ.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>Кампания</th><th>Лиды</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-leads">2 лида</td><td class="campaign-cpa"><span>CPA</span>14 461,92 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-leads">0 лидов</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-leads">15 лидов</td><td class="campaign-cpa"><span>CPA</span>2 928,00 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-leads">1 лид</td><td class="campaign-cpa"><span>CPA</span>14 823,23 ₽</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="month-panel" data-panel="mar26" data-year="2026" role="tabpanel">
+        <div class="panel-head">
+          <div><h3>Март 2026</h3><div class="panel-period">01.03.2026 - 31.03.2026</div></div>
+          <span class="trend bad">+42,9% CPA</span>
+        </div>
+        <div class="panel-body">
+          <div class="mini-stats">
+            <div class="mini-stat"><span>Показы</span><strong>280 053</strong></div>
+            <div class="mini-stat"><span>Клики</span><strong>4 945</strong></div>
+            <div class="mini-stat"><span>Расход</span><strong>104 769,55 ₽</strong></div>
+            <div class="mini-stat conversion"><span>Конверсия</span><strong>13</strong></div>
+            <div class="mini-stat"><span>CPC</span><strong>21,19 ₽</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,77%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>Вывод</h4>
+            <p>К предыдущему месяцу: лиды -28%, CPA +43%. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 3456.67 руб. Проверить кампании: высокий CPA: ГАК поиск; без лидов: ГАК РСЯ.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>Кампания</th><th>Лиды</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-leads">1 лид</td><td class="campaign-cpa"><span>CPA</span>43 778,15 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-leads">0 лидов</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-leads">12 лидов</td><td class="campaign-cpa"><span>CPA</span>3 456,67 ₽</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="month-panel" data-panel="apr26" data-year="2026" role="tabpanel">
+        <div class="panel-head">
+          <div><h3>Апрель 2026</h3><div class="panel-period">01.04.2026 - 30.04.2026</div></div>
+          <span class="trend good">-37,5% CPA</span>
+        </div>
+        <div class="panel-body">
+          <div class="mini-stats">
+            <div class="mini-stat"><span>Показы</span><strong>222 511</strong></div>
+            <div class="mini-stat"><span>Клики</span><strong>5 622</strong></div>
+            <div class="mini-stat"><span>Расход</span><strong>80 593,49 ₽</strong></div>
+            <div class="mini-stat conversion"><span>Конверсия</span><strong>16</strong></div>
+            <div class="mini-stat"><span>CPC</span><strong>14,34 ₽</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>2,53%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>Вывод</h4>
+            <p>К предыдущему месяцу: лиды +23%, CPA -37%. Лучший CPA у кампании &quot;ГАК поиск&quot; - 3355.34 руб. Проверить кампании: высокий CPA: ГАК РСЯ; без лидов: gac-nv.ru от 05.11.25.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>Кампания</th><th>Лиды</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-leads">6 лидов</td><td class="campaign-cpa"><span>CPA</span>3 355,34 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-leads">2 лида</td><td class="campaign-cpa"><span>CPA</span>11 486,67 ₽</td></tr><tr><td class="campaign-name">gac-nv.ru от 05.11.25</td><td class="campaign-leads">0 лидов</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-leads">7 лидов</td><td class="campaign-cpa"><span>CPA</span>4 800,37 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-leads">1 лид</td><td class="campaign-cpa"><span>CPA</span>3 885,50 ₽</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-note">Данные подготовлены по отчетам ГАК Нижневартовск за декабрь 2025 и январь-апрель 2026. Формат подходит для размещения на сайте или отправки клиенту как самостоятельный HTML-дашборд.</div>
+  </main>
+
+  
+  <script>
+    const months = [{"key": "dec25", "year": 2025, "name": "Декабрь", "impressions": 186724, "clicks": 2461, "ctr": 1.32, "spend": 99470.86, "cpc": 40.42, "conv": 20, "cpa": 4973.54, "cr": 0.81, "period": "01.12.2025 - 31.12.2025", "campaigns": [{"name": "ГАК поиск", "id": "704535712", "impressions": 3157, "clicks": 393, "ctr": 12.45, "spend": 69896.3, "cpc": 177.85, "conv": 10, "cpa": 6989.63, "cr": 2.54}, {"name": "ГАК РСЯ", "id": "704626086", "impressions": 418, "clicks": 2, "ctr": 0.48, "spend": 25.5, "cpc": 12.75, "conv": 0, "cpa": 0, "cr": 0.0}, {"name": "gac-nv.ru от 05.11.25", "id": "704628070", "impressions": 5120, "clicks": 28, "ctr": 0.55, "spend": 0.0, "cpc": 0.0, "conv": 0, "cpa": 0, "cr": 0.0}, {"name": "Товарная кампания gac-nv.ru от 05.11.25", "id": "704638102", "impressions": 25239, "clicks": 489, "ctr": 1.94, "spend": 11419.2, "cpc": 23.35, "conv": 9, "cpa": 1268.8, "cr": 1.84}, {"name": "Конкуренты ГАК поиск", "id": "704651921", "impressions": 1, "clicks": 0, "ctr": 0.0, "spend": 0.0, "cpc": 0.0, "conv": 0, "cpa": 0, "cr": 0}, {"name": "Конкуренты ГАК РСЯ", "id": "704651925", "impressions": 152789, "clicks": 1549, "ctr": 1.01, "spend": 18129.85, "cpc": 11.7, "conv": 1, "cpa": 18129.85, "cr": 0.06}], "conclusion": "Базовый месяц для сравнения: фиксируем стартовые показатели по лидам и CPA. Лучший CPA у кампании \"Товарная кампания gac-nv.ru от 05.11.25\" - 1268.80 руб. Проверить кампании: высокий CPA: Конкуренты ГАК РСЯ; без лидов: ГАК РСЯ, gac-nv.ru от 05.11.25, Конкуренты ГАК поиск.", "trendClass": "neutral", "trendLabel": "Старт"}, {"key": "jan26", "year": 2026, "name": "Январь", "impressions": 109657, "clicks": 1719, "ctr": 1.57, "spend": 60384.37, "cpc": 35.13, "conv": 11, "cpa": 5489.49, "cr": 0.64, "period": "01.01.2026 - 31.01.2026", "campaigns": [{"name": "ГАК поиск", "id": "704535712", "impressions": 2860, "clicks": 296, "ctr": 10.35, "spend": 35297.4, "cpc": 119.25, "conv": 5, "cpa": 7059.48, "cr": 1.69}, {"name": "Товарная кампания gac-nv.ru от 05.11.25", "id": "704638102", "impressions": 19344, "clicks": 445, "ctr": 2.3, "spend": 13302.88, "cpc": 29.89, "conv": 6, "cpa": 2217.15, "cr": 1.35}, {"name": "Конкуренты ГАК РСЯ", "id": "704651925", "impressions": 87453, "clicks": 978, "ctr": 1.12, "spend": 11784.09, "cpc": 12.05, "conv": 0, "cpa": 0, "cr": 0.0}], "conclusion": "К предыдущему месяцу: лиды -45%, CPA +10%. Лучший CPA у кампании \"Товарная кампания gac-nv.ru от 05.11.25\" - 2217.15 руб. Проверить кампании: без лидов: Конкуренты ГАК РСЯ.", "trendClass": "bad", "trendLabel": "+10,4% CPA"}, {"key": "feb26", "year": 2026, "name": "Февраль", "impressions": 227514, "clicks": 3179, "ctr": 1.4, "spend": 101529.4, "cpc": 31.94, "conv": 18, "cpa": 5640.52, "cr": 0.57, "period": "01.02.2026 - 28.02.2026", "campaigns": [{"name": "ГАК поиск", "id": "704535712", "impressions": 2224, "clicks": 210, "ctr": 9.44, "spend": 28923.85, "cpc": 137.73, "conv": 2, "cpa": 14461.92, "cr": 0.95}, {"name": "ГАК РСЯ", "id": "704626086", "impressions": 100830, "clicks": 876, "ctr": 0.87, "spend": 13862.32, "cpc": 15.82, "conv": 0, "cpa": 0, "cr": 0.0}, {"name": "Товарная кампания gac-nv.ru от 05.11.25", "id": "704638102", "impressions": 49565, "clicks": 1083, "ctr": 2.19, "spend": 43920.0, "cpc": 40.55, "conv": 15, "cpa": 2928.0, "cr": 1.39}, {"name": "Конкуренты ГАК РСЯ", "id": "704651925", "impressions": 74895, "clicks": 1010, "ctr": 1.35, "spend": 14823.23, "cpc": 14.68, "conv": 1, "cpa": 14823.23, "cr": 0.1}], "conclusion": "К предыдущему месяцу: лиды +64%, CPA +3%. Лучший CPA у кампании \"Товарная кампания gac-nv.ru от 05.11.25\" - 2928.00 руб. Проверить кампании: высокий CPA: ГАК поиск, Конкуренты ГАК РСЯ; без лидов: ГАК РСЯ.", "trendClass": "bad", "trendLabel": "+2,8% CPA"}, {"key": "mar26", "year": 2026, "name": "Март", "impressions": 280053, "clicks": 4945, "ctr": 1.77, "spend": 104769.55, "cpc": 21.19, "conv": 13, "cpa": 8059.2, "cr": 0.26, "period": "01.03.2026 - 31.03.2026", "campaigns": [{"name": "ГАК поиск", "id": "704535712", "impressions": 2349, "clicks": 242, "ctr": 10.3, "spend": 43778.15, "cpc": 180.9, "conv": 1, "cpa": 43778.15, "cr": 0.41}, {"name": "ГАК РСЯ", "id": "704626086", "impressions": 90384, "clicks": 638, "ctr": 0.71, "spend": 19511.4, "cpc": 30.58, "conv": 0, "cpa": 0, "cr": 0.0}, {"name": "Товарная кампания gac-nv.ru от 05.11.25", "id": "704638102", "impressions": 187320, "clicks": 4065, "ctr": 2.17, "spend": 41480.0, "cpc": 10.2, "conv": 12, "cpa": 3456.67, "cr": 0.3}], "conclusion": "К предыдущему месяцу: лиды -28%, CPA +43%. Лучший CPA у кампании \"Товарная кампания gac-nv.ru от 05.11.25\" - 3456.67 руб. Проверить кампании: высокий CPA: ГАК поиск; без лидов: ГАК РСЯ.", "trendClass": "bad", "trendLabel": "+42,9% CPA"}, {"key": "apr26", "year": 2026, "name": "Апрель", "impressions": 222511, "clicks": 5622, "ctr": 2.53, "spend": 80593.49, "cpc": 14.34, "conv": 16, "cpa": 5037.09, "cr": 0.28, "period": "01.04.2026 - 30.04.2026", "campaigns": [{"name": "ГАК поиск", "id": "704535712", "impressions": 2013, "clicks": 174, "ctr": 8.64, "spend": 20132.05, "cpc": 115.7, "conv": 6, "cpa": 3355.34, "cr": 3.45}, {"name": "ГАК РСЯ", "id": "704626086", "impressions": 87400, "clicks": 3014, "ctr": 3.45, "spend": 22973.34, "cpc": 7.62, "conv": 2, "cpa": 11486.67, "cr": 0.07}, {"name": "gac-nv.ru от 05.11.25", "id": "704628070", "impressions": 4284, "clicks": 65, "ctr": 1.52, "spend": 0.0, "cpc": 0.0, "conv": 0, "cpa": 0, "cr": 0.0}, {"name": "Товарная кампания gac-nv.ru от 05.11.25", "id": "704638102", "impressions": 111245, "clicks": 1933, "ctr": 1.74, "spend": 33602.61, "cpc": 17.38, "conv": 7, "cpa": 4800.37, "cr": 0.36}, {"name": "Конкуренты ГАК РСЯ", "id": "704651925", "impressions": 17569, "clicks": 436, "ctr": 2.48, "spend": 3885.5, "cpc": 8.91, "conv": 1, "cpa": 3885.5, "cr": 0.23}], "conclusion": "К предыдущему месяцу: лиды +23%, CPA -37%. Лучший CPA у кампании \"ГАК поиск\" - 3355.34 руб. Проверить кампании: высокий CPA: ГАК РСЯ; без лидов: gac-nv.ru от 05.11.25.", "trendClass": "good", "trendLabel": "-37,5% CPA"}];
+    const defaultYear = 2026;
+    let selectedYear = defaultYear;
+    let selectedKeys = months.map(month => month.key);
+    const fmt = new Intl.NumberFormat('ru-RU', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const fmtInt = new Intl.NumberFormat('ru-RU');
+    function money(value) { return fmt.format(value); }
+    function yearMonths(year = selectedYear) { return months.filter(month => month.year === year); }
+    function selectedMonths() { return months.filter(month => selectedKeys.includes(month.key)); }
+    function selectedYears(data = selectedMonths()) { return [...new Set(data.map(month => month.year))].sort(); }
+    function fullYearSelected(year) { const keys = yearMonths(year).map(month => month.key); return keys.every(key => selectedKeys.includes(key)); }
+    function compactPeriodLabel(data) { if (!data.length) return 'период не выбран'; const years = selectedYears(data); if (years.length === 1 && data.length === yearMonths(years[0]).length) return `${years[0]}, за год`; if (data.length === 1) return `${data[0].name.toLowerCase()} ${data[0].year}`; return `с ${data[0].name.toLowerCase()} ${data[0].year} по ${data[data.length - 1].name.toLowerCase()} ${data[data.length - 1].year}`; }
+    function selectionLabel(data) { return compactPeriodLabel(data); }
+    function aggregate(data) { const totals = data.reduce((acc, month) => { acc.impressions += month.impressions; acc.clicks += month.clicks; acc.spend += month.spend; acc.conv += month.conv; return acc; }, { impressions: 0, clicks: 0, spend: 0, conv: 0 }); return { ...totals, ctr: totals.impressions ? (totals.clicks / totals.impressions) * 100 : 0, cpc: totals.clicks ? totals.spend / totals.clicks : 0, cpa: totals.conv ? totals.spend / totals.conv : 0, cr: totals.clicks ? (totals.conv / totals.clicks) * 100 : 0 }; }
+    function points(values, width, height, pad, invert = false) { if (!values.length) return []; const min = Math.min(...values); const max = Math.max(...values); const span = max - min || 1; return values.map((value, index) => { const step = values.length > 1 ? (width - pad * 2) / (values.length - 1) : 0; const x = values.length > 1 ? pad + index * step : width / 2; const ratio = (value - min) / span; const y = invert ? pad + ratio * (height - pad * 2) : height - pad - ratio * (height - pad * 2); return [x, y]; }); }
+    function linePath(pointList) { return pointList.map((point, index) => `${index ? 'L' : 'M'} ${point[0].toFixed(1)} ${point[1].toFixed(1)}`).join(' '); }
+    function shortMonth(month) { return `${month.name.slice(0, 3)} ${String(month.year).slice(2)}`; }
+    function labelEvery(data) { return data.length > 8 ? 2 : 1; }
+    function niceMax(value) { if (!value || value <= 0) return 1; const power = 10 ** Math.floor(Math.log10(value)); const normalized = value / power; const step = normalized <= 1 ? 1 : normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10; return step * power; }
+    function axisLabels(max, formatter) { return [max, max * .75, max * .5, max * .25, 0].map(value => ({ value, label: formatter(value) })); }
+    function formatCompact(value) { if (value >= 1000000) return `${Math.round(value / 100000) / 10} млн`; if (value >= 1000) return `${Math.round(value / 1000)} тыс.`; return fmtInt.format(Math.round(value)); }
+    function formatMoneyCompact(value) { if (value >= 1000) return `${Math.round(value / 1000)} тыс. ₽`; return `${Math.round(value)} ₽`; }
+    function formatPercent(value) { return `${value.toFixed(value >= 10 ? 0 : 1)}%`; }
+    function formatMoney(value) { return `${money(value)} ₽`; }
+    function periodTitle(month) { return month.period || `${month.name} ${month.year}`; }
+    function showChartTooltip(svg, month, series, x, y) { const tip = svg.closest('.chart-card')?.querySelector('.chart-tooltip'); if (!tip) return; tip.innerHTML = `<strong>${periodTitle(month)}</strong>${series.map(item => `<span>${item.label}: <b>${item.format(item.value(month))}</b></span>`).join('')}`; tip.hidden = false; const card = svg.getBoundingClientRect(); const tipBox = tip.getBoundingClientRect(); const left = Math.min(Math.max(12, x + 16), Math.max(12, card.width - tipBox.width - 12)); const top = Math.min(Math.max(48, y - 8), Math.max(48, card.height - tipBox.height - 12)); tip.style.left = `${left}px`; tip.style.top = `${top}px`; }
+    function hideChartTooltip(svg) { const tip = svg.closest('.chart-card')?.querySelector('.chart-tooltip'); if (tip) tip.hidden = true; }
+    function drawChart(svgId, data, series, options = {}) { const svg = document.querySelector(svgId); const width = 760; const height = 275; const pad = { left: 82, right: 32, top: 32, bottom: 42 }; svg.setAttribute('viewBox', `0 0 ${width} ${height}`); svg.innerHTML = `<defs><filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#172033" flood-opacity=".14"></feDropShadow></filter></defs><rect x="0" y="0" width="${width}" height="${height}" rx="8" fill="#fbfdff"></rect>`; if (!data.length) { svg.insertAdjacentHTML('beforeend', `<text x="${width / 2}" y="${height / 2}" text-anchor="middle" fill="#647084" font-size="15" font-weight="800">Выберите месяц или год в фильтре</text>`); return; } const allValues = series.flatMap(item => data.map(month => item.value(month))); const max = niceMax(Math.max(...allValues, 1)); const plotW = width - pad.left - pad.right; const plotH = height - pad.top - pad.bottom; axisLabels(max, options.axisFormat || formatCompact).forEach(({ value, label }) => { const y = pad.top + (1 - value / max) * plotH; svg.insertAdjacentHTML('beforeend', `<line x1="${pad.left}" y1="${y}" x2="${width - pad.right}" y2="${y}" stroke="#dfe7f2" stroke-width="1"></line><text x="${pad.left - 10}" y="${y + 4}" text-anchor="end" fill="#647084" font-size="12" font-weight="700">${label}</text>`); }); const every = labelEvery(data); data.forEach((month, index) => { if (index % every && index !== data.length - 1) return; const x = data.length > 1 ? pad.left + index * (plotW / (data.length - 1)) : pad.left + plotW / 2; svg.insertAdjacentHTML('beforeend', `<text x="${x}" y="${height - 14}" text-anchor="middle" fill="#647084" font-size="11" font-weight="700">${shortMonth(month)}</text>`); }); const positions = data.map((month, index) => { const x = data.length > 1 ? pad.left + index * (plotW / (data.length - 1)) : pad.left + plotW / 2; return { month, x }; }); series.forEach(item => { const pts = positions.map(pos => [pos.x, pad.top + (1 - item.value(pos.month) / max) * plotH]); svg.insertAdjacentHTML('beforeend', `<path d="${linePath(pts)}" fill="none" stroke="${item.color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>`); pts.forEach(([x, y]) => svg.insertAdjacentHTML('beforeend', `<circle cx="${x}" cy="${y}" r="5" fill="#ffffff" stroke="${item.color}" stroke-width="3"></circle>`)); }); positions.forEach((pos, index) => { const x0 = index === 0 ? pad.left : (positions[index - 1].x + pos.x) / 2; const x1 = index === positions.length - 1 ? width - pad.right : (pos.x + positions[index + 1].x) / 2; svg.insertAdjacentHTML('beforeend', `<rect class="chart-hit" data-index="${index}" x="${x0}" y="${pad.top}" width="${x1 - x0}" height="${plotH}" fill="transparent"></rect>`); }); svg.querySelectorAll('.chart-hit').forEach(hit => { const handle = () => { const index = Number(hit.dataset.index); const pos = positions[index]; const lineX = pos.x; svg.querySelectorAll('.chart-focus').forEach(node => node.remove()); svg.insertAdjacentHTML('beforeend', `<line class="chart-focus" x1="${lineX}" y1="${pad.top}" x2="${lineX}" y2="${height - pad.bottom}" stroke="#9aa8ba" stroke-width="2" stroke-dasharray="5 5"></line>`); series.forEach(item => { const y = pad.top + (1 - item.value(pos.month) / max) * plotH; svg.insertAdjacentHTML('beforeend', `<circle class="chart-focus" cx="${lineX}" cy="${y}" r="7" fill="${item.color}" stroke="#ffffff" stroke-width="3"></circle>`); }); showChartTooltip(svg, pos.month, series, lineX, pad.top + 8); }; hit.addEventListener('mouseenter', handle); hit.addEventListener('mousemove', handle); hit.addEventListener('touchstart', handle, { passive: true }); }); svg.addEventListener('mouseleave', () => { svg.querySelectorAll('.chart-focus').forEach(node => node.remove()); hideChartTooltip(svg); }); }
+    function drawTrafficVolumeChart(data = selectedMonths()) { drawChart('#trafficVolumeChart', data, [{ label: 'Показы', color: '#2d6cdf', value: m => m.impressions, format: formatCompact }, { label: 'Клики', color: '#0b9696', value: m => m.clicks, format: formatCompact }], { axisFormat: formatCompact }); }
+    function drawSpendChart(data = selectedMonths()) { drawChart('#spendChart', data, [{ label: 'Расход', color: '#d99524', value: m => m.spend, format: formatMoney }], { axisFormat: formatMoneyCompact }); }
+    function drawConversionsChart(data = selectedMonths()) { drawChart('#conversionsChart', data, [{ label: 'Конверсии', color: '#129766', value: m => m.conv, format: value => `${fmtInt.format(value)} лидов` }], { axisFormat: value => fmtInt.format(Math.round(value)) }); }
+    function drawCpaChart(data = selectedMonths()) { drawChart('#cpaChart', data, [{ label: 'Цена конверсии', color: '#d64545', value: m => m.cpa, format: formatMoney }], { axisFormat: formatMoneyCompact }); }
+    function drawQualityChart(data = selectedMonths()) { drawChart('#qualityChart', data, [{ label: 'CTR', color: '#7156c6', value: m => m.ctr, format: formatPercent }, { label: 'CPC', color: '#d99524', value: m => m.cpc, format: formatMoney }], { axisFormat: value => value >= 10 ? `${Math.round(value)}` : value.toFixed(1) }); }
+    function renderTable(data = selectedMonths()) { const rows = document.querySelector('#summaryRows'); rows.innerHTML = data.map((m, i) => { const prev = i === 0 ? null : data[i - 1]; const cpaTrend = !prev ? 'Старт' : m.cpa <= prev.cpa ? 'Улучшение' : 'Просадка'; const trendClass = !prev || m.cpa <= prev.cpa ? 'good-text' : 'bad-text'; return `<tr><td><strong>${m.name} ${m.year}</strong></td><td>${fmtInt.format(m.impressions)}</td><td>${fmtInt.format(m.clicks)}</td><td>${m.ctr.toFixed(2)}</td><td>${money(m.spend)}</td><td>${money(m.cpc)}</td><td class="conversion">${m.conv}</td><td>${money(m.cpa)}</td><td class="${trendClass}">${cpaTrend}</td></tr>`; }).join(''); }
+    function setTrend(node, note) { node.textContent = note.text; node.classList.toggle('good', note.className === 'good'); node.classList.toggle('bad', note.className === 'bad'); node.classList.toggle('neutral', note.className === 'neutral'); }
+    function updateKpis(data = selectedMonths()) { const total = aggregate(data); const years = selectedYears(data); const isFullSingleYear = years.length === 1 && data.length === yearMonths(years[0]).length; const periodText = isFullSingleYear ? `Сумма за ${years[0]}` : `Выбрано: ${data.length} мес.`; const notes = { spend: periodText, conv: { text: `Всего лидов: ${total.conv}`, className: 'good' }, cpa: { text: isFullSingleYear ? `CPA за ${years[0]}` : 'CPA по выбранным месяцам', className: total.cpa ? 'good' : 'neutral' }, cpc: { text: isFullSingleYear ? `CPC за ${years[0]}` : 'CPC по выбранным месяцам', className: 'good' } }; document.querySelector('[data-kpi="spend"]').textContent = `${money(total.spend)} ₽`; document.querySelector('[data-kpi="conv"]').textContent = total.conv; document.querySelector('[data-kpi="cpa"]').textContent = `${money(total.cpa)} ₽`; document.querySelector('[data-kpi="cpc"]').textContent = `${money(total.cpc)} ₽`; document.querySelector('[data-kpi-note="spend"]').textContent = notes.spend; setTrend(document.querySelector('[data-kpi-note="conv"]'), notes.conv); setTrend(document.querySelector('[data-kpi-note="cpa"]'), notes.cpa); setTrend(document.querySelector('[data-kpi-note="cpc"]'), notes.cpc); const summary = document.querySelector('[data-selection-summary]'); if (summary) summary.textContent = `Период: ${selectionLabel(data)}. Можно сравнивать месяцы из разных лет.`; }
+    function periodChips(data = selectedMonths()) { if (!data.length) return ['Ничего не выбрано']; const years = selectedYears(data); return years.map(year => { const yearData = data.filter(month => month.year === year); if (yearData.length === yearMonths(year).length) return `${year} за год`; if (yearData.length === 1) return `${shortMonth(yearData[0])}`; return `${shortMonth(yearData[0])} - ${shortMonth(yearData[yearData.length - 1])}`; }); }
+    function syncButtons() { const data = selectedMonths(); document.querySelectorAll('[data-month]').forEach(input => { const active = selectedKeys.includes(input.dataset.month); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); document.querySelectorAll('[data-range="year"]').forEach(input => { const year = Number(input.dataset.year); const active = fullYearSelected(year); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); const trigger = document.querySelector('[data-period-trigger] strong'); if (trigger) trigger.textContent = selectionLabel(data); const chips = document.querySelector('[data-selected-chips]'); if (chips) chips.innerHTML = periodChips(data).map(label => `<span class="period-chip">${label}</span>`).join(''); }
+    function syncPanels() { document.querySelectorAll('.month-panel').forEach(panel => { const active = selectedKeys.includes(panel.dataset.panel); panel.classList.toggle('active', active); }); }
+    function renderDashboard() { const data = selectedMonths(); syncButtons(); syncPanels(); updateKpis(data); drawTrafficVolumeChart(data); drawSpendChart(data); drawConversionsChart(data); drawCpaChart(data); drawQualityChart(data); renderTable(data); }
+    function setupCampaignToggles() { document.querySelectorAll('.month-comment').forEach(comment => { const list = comment.querySelector('.campaign-list'); if (!list || comment.querySelector('.campaign-toggle')) return; const button = document.createElement('button'); button.type = 'button'; button.className = 'campaign-toggle'; button.textContent = 'Подробно по кампаниям'; button.addEventListener('click', () => { const open = comment.classList.toggle('campaigns-open'); button.textContent = open ? 'Скрыть кампании' : 'Подробно по кампаниям'; }); comment.insertBefore(button, list); }); }
+    function initMonthExplorer() { setupCampaignToggles(); const menu = document.querySelector('[data-period-menu]'); const trigger = document.querySelector('[data-period-trigger]'); const setMenuOpen = open => { if (!menu || !trigger) return; menu.hidden = !open; trigger.setAttribute('aria-expanded', open ? 'true' : 'false'); }; trigger?.addEventListener('click', event => { event.stopPropagation(); setMenuOpen(menu.hidden); }); document.addEventListener('click', event => { if (!event.target.closest('.period-dropdown')) setMenuOpen(false); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenuOpen(false); }); document.querySelectorAll('[data-clear-period]').forEach(button => { button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); selectedKeys = []; renderDashboard(); }); }); document.querySelectorAll('.period-option').forEach(option => { option.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); const input = option.querySelector('input'); if (!input) return; if (input.dataset.range === 'year') { const year = Number(input.dataset.year); const keys = yearMonths(year).map(month => month.key); const active = fullYearSelected(year); selectedYear = year; selectedKeys = active ? selectedKeys.filter(key => !keys.includes(key)) : [...new Set([...selectedKeys, ...keys])]; } else { const key = input.dataset.month; const month = months.find(item => item.key === key); if (!month) return; const active = selectedKeys.includes(key); selectedYear = month.year; selectedKeys = active ? selectedKeys.filter(item => item !== key) : [...new Set([...selectedKeys, key])]; } renderDashboard(); }); }); renderDashboard(); }
+    initMonthExplorer();
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
