@@ -299,7 +299,7 @@
     }
 
     .period-menu[hidden] {
-      display: none !important;
+      display: none;
     }
 
     .period-group + .period-group {
@@ -802,7 +802,7 @@
       }
     }
 
-    @media (max-width: 640px) and (hover: none) and (pointer: coarse) {
+    @media (max-width: 640px) {
       .wrap {
         width: min(100% - 20px, 1180px);
       }
@@ -916,114 +916,12 @@
     .card .label { font-size: 11px; }
     .card .value { margin-top: 5px; font-size: 23px; line-height: 1.08; white-space: nowrap; }
     .trend { margin-top: 7px; min-height: 24px; padding: 4px 7px; font-size: 11px; }
-    .charts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-bottom: 18px; }
-    .chart-card { position: relative; padding: 14px 14px 18px; overflow: hidden; border-radius: 8px; }
-    .chart-head { gap: 8px; margin-bottom: 12px; }
+    .charts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 10px; }
+    .chart-card { position: relative; padding: 10px; overflow: visible; border-radius: 8px; }
+    .chart-head { gap: 8px; margin-bottom: 7px; }
     .legend { gap: 7px; font-size: 11px; }
     .legend i { width: 8px; height: 8px; }
-    .chart { display: block; width: 100%; max-width: 100%; height: 188px; min-height: 188px; overflow: hidden; }
-    .chart-tooltip { position: absolute; z-index: 50; min-width: 150px; max-width: 230px; padding: 9px 10px; border: 1px solid #d8e0ec; border-radius: 8px; background: #ffffff; color: var(--ink); box-shadow: 0 14px 32px rgba(23, 32, 51, .18); pointer-events: none; font-size: 12px; line-height: 1.35; }
-    .chart-tooltip strong { display: block; margin-bottom: 5px; font-size: 12px; line-height: 1.25; }
-    .chart-tooltip span { display: block; color: var(--muted); white-space: nowrap; }
-    .chart-tooltip b { color: var(--ink); }
-    .table-card { margin-bottom: 10px; padding: 10px; overflow-x: auto; }
-    .table-card table { min-width: 900px; }
-    .table-card th, .table-card td { padding: 7px 8px; font-size: 12px; line-height: 1.25; white-space: nowrap; }
-    .month-explorer { padding: 10px; margin-bottom: 10px; }
-    .month-panel:hover, .card:hover { transform: none; }
-    .panel-head { padding: 9px 10px; gap: 10px; }
-    .panel-head h3 { font-size: 15px; }
-    .panel-period { font-size: 11px; }
-    .mini-stats, .month-comment { padding: 7px 8px; }
-    .mini-stats { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
-    .mini-stat { min-height: 46px; padding: 6px 5px; }
-    .mini-stat span { font-size: 9px; }
-    .mini-stat strong { margin-top: 3px; font-size: 13px; }
-    .month-comment h4,
-    .month-comment p { display: none; }
-    .campaign-toggle { margin-top: 0; padding: 4px 8px; font-size: 11px; min-height: 28px; border-radius: 7px; }
-    .campaign-list { margin-top: 6px; }
-    .campaign-table { min-width: 680px; }
-    .campaign-table th, .campaign-table td { padding: 4px 6px; font-size: 11px; line-height: 1.2; }
-    .campaign-table th:nth-child(n+2),
-    .campaign-table td:nth-child(n+2) { text-align: center; }
-    .campaign-table .campaign-cpa span { text-align: center; }
-    .footer-note { padding: 10px 0 18px; font-size: 12px; }
-    @media (max-width: 980px) {
-      .topbar, .period-filter { grid-template-columns: 1fr; }
-      header { position: static; }
-      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .chart { height: 210px; min-height: 210px; }
-    }
-    @media (max-width: 640px) {
-      .wrap { width: min(100% - 16px, 1320px); }
-      h1 { font-size: 19px; }
-      .agency img { width: 178px; }
-      .charts-grid { grid-template-columns: 1fr; }
-      .kpis, .mini-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .period-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .card .value { font-size: 20px; }
-    }
-
-  
-  
-
-    /* Compact readable layout for the public GAK dashboard. */
-    body { font-size: 13px; }
-    .wrap { width: min(1320px, calc(100% - 24px)); }
-    header { position: sticky; top: 0; z-index: 30; box-shadow: 0 8px 22px rgba(23, 32, 51, .05); }
-    .topbar { grid-template-columns: minmax(0, 1fr) auto; gap: 14px; padding: 12px 0 10px; }
-    .brand { gap: 3px; }
-    h1 { font-size: 22px; line-height: 1.18; }
-    .subtitle { max-width: 760px; font-size: 12px; line-height: 1.3; }
-    .report-link { margin-top: 5px; padding: 6px 9px; font-size: 12px; }
-    .agency { margin-bottom: 5px; padding: 5px 8px; gap: 8px; }
-    .agency img { width: 210px; }
-    main { padding: 10px 0 24px; }
-    .month-switcher, .chart-card, .table-card, .month-explorer, .card { box-shadow: 0 10px 24px rgba(29, 45, 73, .06); }
-    .month-switcher { margin-bottom: 10px; padding: 10px; }
-    .month-switcher h2, .chart-head h2 { font-size: 16px; line-height: 1.2; }
-    .month-switcher p, .chart-sub { font-size: 12px; line-height: 1.25; }
-    .period-filter { grid-template-columns: minmax(240px, 360px) 1fr; gap: 9px; margin-top: 8px; }
-    .period-trigger { min-height: 44px; padding: 8px 36px 8px 10px; }
-    .period-trigger::after { right: 13px; top: 17px; }
-    .period-trigger strong { font-size: 14px; }
-    .period-trigger small, .period-chip, .period-clear { font-size: 11px; }
-    .selected-periods { min-height: 44px; gap: 5px; }
-    .period-chip, .period-clear { min-height: 24px; padding: 4px 8px; }
-    .period-menu { width: min(620px, calc(100vw - 32px)); padding: 9px; }
-    .period-options { grid-template-columns: repeat(6, minmax(66px, 1fr)); gap: 5px; }
-    .period-option { min-height: 34px; padding: 5px; font-size: 12px; }
-    .period-option small { font-size: 9px; }
-    .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-bottom: 10px; }
-    .card { padding: 11px 12px; border-radius: 8px; }
-    .card .label { font-size: 11px; }
-    .card .value { margin-top: 5px; font-size: 23px; line-height: 1.08; white-space: nowrap; }
-    .trend { margin-top: 7px; min-height: 24px; padding: 4px 7px; font-size: 11px; }
-    .charts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-bottom: 18px; }
-    .single-month-overview { margin-bottom: 10px; padding: 10px; }
-    .single-month-overview[hidden],
-    .charts-grid[hidden] { display: none !important; }
-    .single-month-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
-    .single-month-card { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: #ffffff; }
-    .single-month-card .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
-    .single-month-card .value { margin-top: 5px; font-size: 23px; line-height: 1.08; font-weight: 800; white-space: nowrap; }
-    .single-month-card .note { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.25; }
-    .mobile-month-groups,
-    .mobile-period-picker,
-    .mobile-chart-nav { display: none; }
-    .mobile-period-picker { margin-top: 8px; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .mobile-period-picker label { display: grid; gap: 4px; font-size: 11px; font-weight: 700; color: var(--muted); }
-    .mobile-period-picker select { width: 100%; min-height: 40px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: #ffffff; color: var(--ink); font: inherit; }
-    .mobile-chart-nav { margin: 0 0 10px; gap: 6px; flex-wrap: wrap; }
-    .mobile-compare-toggle { display: none; margin-top: 8px; padding: 8px 10px; border: 1px solid #c8d7eb; border-radius: 10px; background: #ffffff; color: var(--blue); font: inherit; font-size: 12px; font-weight: 700; }
-    .mobile-chart-btn { padding: 6px 9px; border: 1px solid #c8d7eb; border-radius: 999px; background: #ffffff; color: var(--muted); font: inherit; font-size: 11px; font-weight: 700; }
-    .mobile-chart-btn.active { border-color: #8fb3f2; background: #eef4ff; color: var(--blue); }
-    .chart-card { position: relative; padding: 14px 14px 20px; overflow: hidden; border-radius: 8px; }
-    .chart-head { gap: 8px; margin-bottom: 12px; }
-    .legend { gap: 7px; font-size: 11px; }
-    .legend i { width: 8px; height: 8px; }
-    .chart { display: block; width: 100%; max-width: 100%; height: 204px; min-height: 204px; overflow: hidden; }
+    .chart { height: 188px; min-height: 188px; overflow: visible; }
     .chart-tooltip { position: absolute; z-index: 50; min-width: 150px; max-width: 230px; padding: 9px 10px; border: 1px solid #d8e0ec; border-radius: 8px; background: #ffffff; color: var(--ink); box-shadow: 0 14px 32px rgba(23, 32, 51, .18); pointer-events: none; font-size: 12px; line-height: 1.35; }
     .chart-tooltip strong { display: block; margin-bottom: 5px; font-size: 12px; line-height: 1.25; }
     .chart-tooltip span { display: block; color: var(--muted); white-space: nowrap; }
@@ -1056,66 +954,17 @@
       .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .chart { height: 210px; min-height: 210px; }
     }
-    @media (max-width: 640px) and (hover: none) and (pointer: coarse) {
+    @media (max-width: 640px) {
       .wrap { width: min(100% - 16px, 1320px); }
       h1 { font-size: 19px; }
       .agency img { width: 178px; }
-      .period-filter,
-      .period-dropdown,
-      .selected-periods-wrap,
-      .period-trigger,
-      .period-menu,
-      .mobile-period-picker,
-      .mobile-compare-toggle { display: none !important; }
-      .mobile-month-groups { display: grid !important; gap: 8px; }
-      .mobile-period-clear { justify-self: start; min-height: 24px; padding: 4px 10px; border: 1px solid rgba(217, 69, 69, .25); border-radius: 999px; background: #fdeeee; color: #d64545; font: inherit; font-size: 11px; font-weight: 800; }
-      .mobile-month-group { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; box-shadow: 0 12px 28px rgba(47, 72, 105, .08); }
-      .mobile-month-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
-      .mobile-year-title { font-size: 16px; font-weight: 900; }
-      .mobile-month-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
-      .mobile-month-btn { min-height: 44px; padding: 6px; border: 1px solid var(--line); border-radius: 8px; background: #eef4fb; color: var(--ink); font: inherit; font-size: 12px; font-weight: 900; text-align: center; }
-      .mobile-month-btn small { display: block; margin-top: 1px; color: var(--muted); font-size: 10px; font-weight: 700; }
-      .mobile-month-btn.active { background: var(--green-soft); border-color: rgba(18, 151, 102, .38); color: var(--green); box-shadow: 0 14px 26px rgba(18, 151, 102, .12); }
-      .mobile-year-btn { min-width: 96px; min-height: 40px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: #ffffff; color: var(--blue); font: inherit; font-size: 12px; font-weight: 800; text-align: center; }
-      .mobile-year-btn small { display: block; font-size: 10px; color: var(--muted); }
-      .mobile-year-btn.active { border-color: rgba(18, 151, 102, .38); background: var(--green-soft); color: var(--green); }
-      .mobile-chart-nav { display: flex; }
-      .charts-grid { grid-template-columns: 1fr; gap: 14px; margin-bottom: 14px; }
-      .charts-grid .chart-card { display: none; }
-      .charts-grid .chart-card.mobile-active { display: block; }
-      .chart-card { overflow: hidden; padding: 12px 12px 18px; }
-      .chart { height: 188px; min-height: 188px; }
-      .kpis, .mini-stats, .single-month-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .selected-periods-wrap { gap: 8px; }
-      .selected-periods { min-height: 0; }
+      .charts-grid { grid-template-columns: 1fr; }
+      .kpis, .mini-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .period-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .card .value { font-size: 20px; }
-      .month-explorer { padding: 8px; }
-      .month-panel { border-radius: 10px; }
-      .panel-head { flex-direction: column; align-items: flex-start; padding: 8px; gap: 6px; }
-      .panel-head .trend { margin-top: 0; align-self: flex-start; }
-      .panel-body { gap: 6px; }
-      .mini-stats, .month-comment { padding: 6px; }
-      .mini-stat { min-height: 42px; }
-      .mini-stat strong { font-size: 12px; }
-      .campaign-toggle { width: 100%; justify-content: center; }
-      .campaign-list { margin-top: 4px; overflow: hidden; }
-      .campaign-table { min-width: 0; width: 100%; table-layout: fixed; }
-      .campaign-table th, .campaign-table td { padding: 4px 5px; font-size: 10px; }
-      .campaign-table th:nth-child(2),
-      .campaign-table td:nth-child(2),
-      .campaign-table th:nth-child(3),
-      .campaign-table td:nth-child(3),
-      .campaign-table th:nth-child(5),
-      .campaign-table td:nth-child(5) { display: none; }
-      .campaign-table th:nth-child(1),
-      .campaign-table td:nth-child(1) { width: 54%; text-align: left; }
-      .campaign-table th:nth-child(4),
-      .campaign-table td:nth-child(4),
-      .campaign-table th:nth-child(6),
-      .campaign-table td:nth-child(6) { width: 23%; }
-      .campaign-name { word-break: break-word; }
     }
 
+  
   </style>
 </head>
 <body>
@@ -1140,7 +989,7 @@
     <section class="month-switcher" aria-label="Выбор периода для статистики">
       <div>
         <h2>Фильтр периода</h2>
-        <p data-selection-summary>Период: период не выбран. Можно сравнивать месяцы из разных лет.</p>
+        <p data-selection-summary>Период: период не выбран. Обычный клик выбирает один месяц, Ctrl или Shift позволяют сравнивать несколько месяцев.</p>
       </div>
       <div class="period-filter">
         <div class="period-dropdown">
@@ -1178,21 +1027,6 @@
           <button class="period-clear" type="button" data-clear-period>Без выбора</button>
         </div>
       </div>
-      <div class="mobile-month-groups" data-mobile-month-groups aria-label="Выбор месяцев на телефоне"></div>
-      <div class="mobile-period-picker" aria-label="Быстрый выбор месяца на телефоне">
-        <label>Год
-          <select data-mobile-year>
-            <option value="2025">2025</option>
-            <option value="2026" selected>2026</option>
-          </select>
-        </label>
-        <label>Месяц
-          <select data-mobile-month>
-            <option value="">Все месяцы года</option>
-          </select>
-        </label>
-      </div>
-      <button type="button" class="mobile-compare-toggle" data-mobile-compare-toggle>Сравнить месяцы из разных лет</button>
     </section>
 
     <section class="kpis" aria-label="Главные показатели">
@@ -1213,21 +1047,12 @@
       <div class="single-month-grid" data-single-month-grid></div>
     </section>
 
-    <div class="mobile-chart-nav" data-mobile-chart-nav aria-label="Переключение графиков на телефоне">
-      <button type="button" class="mobile-chart-btn active" data-chart-target="impressions">Показы</button>
-      <button type="button" class="mobile-chart-btn" data-chart-target="clicks">Клики</button>
-      <button type="button" class="mobile-chart-btn" data-chart-target="spend">Расход</button>
-      <button type="button" class="mobile-chart-btn" data-chart-target="cpa">CPA</button>
-      <button type="button" class="mobile-chart-btn" data-chart-target="leads">Лиды</button>
-      <button type="button" class="mobile-chart-btn" data-chart-target="ctr">CTR</button>
-    </div>
     <section class="charts-grid" data-charts-grid aria-label="Графики эффективности">
-      <article class="chart-card mobile-active" data-chart-card="impressions"><div class="chart-head"><div><h2>Показы</h2><div class="chart-sub">Динамика охвата по месяцам.</div></div><div class="legend"><span><i style="background: var(--blue)"></i>Показы</span></div></div><svg id="impressionsChart" class="chart" role="img" aria-label="Показы"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card" data-chart-card="clicks"><div class="chart-head"><div><h2>Клики</h2><div class="chart-sub">Динамика переходов по рекламе.</div></div><div class="legend"><span><i style="background: var(--teal)"></i>Клики</span></div></div><svg id="clicksChart" class="chart" role="img" aria-label="Клики"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card" data-chart-card="spend"><div class="chart-head"><div><h2>Расход</h2><div class="chart-sub">Рекламные затраты по месяцам.</div></div><div class="legend"><span><i style="background: var(--amber)"></i>Расход</span></div></div><svg id="spendChart" class="chart" role="img" aria-label="Расход"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card" data-chart-card="cpa"><div class="chart-head"><div><h2>CPA</h2><div class="chart-sub">Стоимость лида по месяцам.</div></div><div class="legend"><span><i style="background: #6f5ae6"></i>CPA</span></div></div><svg id="cpaChart" class="chart" role="img" aria-label="CPA"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card" data-chart-card="leads"><div class="chart-head"><div><h2>Лиды</h2><div class="chart-sub">Количество лидов по месяцам.</div></div><div class="legend"><span><i style="background: #3ca3a3"></i>Лиды</span></div></div><svg id="leadsChart" class="chart" role="img" aria-label="Лиды"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card" data-chart-card="ctr"><div class="chart-head"><div><h2>CTR</h2><div class="chart-sub">Доля кликов от показов.</div></div><div class="legend"><span><i style="background: #e74b4b"></i>CTR</span></div></div><svg id="ctrChart" class="chart" role="img" aria-label="CTR"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>Показы и клики</h2><div class="chart-sub">Динамика объема трафика по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--blue)"></i>Показы</span><span><i style="background: var(--teal)"></i>Клики</span></div></div><svg id="trafficVolumeChart" class="chart" role="img" aria-label="Динамика показов и кликов"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>Расход</h2><div class="chart-sub">Динамика рекламного бюджета.</div></div><div class="legend"><span><i style="background: var(--amber)"></i>Расход</span></div></div><svg id="spendChart" class="chart" role="img" aria-label="Расход"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>Конверсии</h2><div class="chart-sub">Количество лидов по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--green)"></i>Конверсии</span></div></div><svg id="conversionsChart" class="chart" role="img" aria-label="Конверсии"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>Цена конверсии</h2><div class="chart-sub">CPA по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--red)"></i>CPA</span></div></div><svg id="cpaChart" class="chart" role="img" aria-label="Цена конверсии"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card"><div class="chart-head"><div><h2>CTR и CPC</h2><div class="chart-sub">Качество и стоимость трафика.</div></div><div class="legend"><span><i style="background: var(--violet)"></i>CTR</span><span><i style="background: var(--amber)"></i>CPC</span></div></div><svg id="qualityChart" class="chart" role="img" aria-label="CTR и CPC"></svg><div class="chart-tooltip" hidden></div></article>
     </section>
 
     <section class="table-card">
@@ -1648,45 +1473,32 @@
     function linePath(pointList) { return pointList.map((point, index) => `${index ? 'L' : 'M'} ${point[0].toFixed(1)} ${point[1].toFixed(1)}`).join(' '); }
     function shortMonth(month) { return `${month.name.slice(0, 3)} ${String(month.year).slice(2)}`; }
     function labelEvery(data) { return data.length > 8 ? 2 : 1; }
-    function niceMax(value) { if (!value || value <= 0) return 1; const power = 10 ** Math.floor(Math.log10(value)); const normalized = value / power; const steps = [1, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10]; const step = steps.find(item => normalized <= item) || 10; return step * power; }
+    function niceMax(value) { if (!value || value <= 0) return 1; const power = 10 ** Math.floor(Math.log10(value)); const normalized = value / power; const step = normalized <= 1 ? 1 : normalized <= 2 ? 2 : normalized <= 5 ? 5 : 10; return step * power; }
     function axisLabels(max, formatter) { return [max, max * .75, max * .5, max * .25, 0].map(value => ({ value, label: formatter(value) })); }
     function formatCompact(value) { if (value >= 1000000) return `${Math.round(value / 100000) / 10} млн`; if (value >= 1000) return `${Math.round(value / 1000)} тыс.`; return fmtInt.format(Math.round(value)); }
     function formatMoneyCompact(value) { if (value >= 1000) return `${Math.round(value / 1000)} тыс. ₽`; return `${Math.round(value)} ₽`; }
     function formatPercent(value) { return `${value.toFixed(value >= 10 ? 0 : 1)}%`; }
     function formatMoney(value) { return `${money(value)} ₽`; }
     function periodTitle(month) { return month.period || `${month.name} ${month.year}`; }
-    function hexToRgba(hex, alpha) { const value = hex.replace('#', ''); const full = value.length === 3 ? value.split('').map(char => char + char).join('') : value; const int = Number.parseInt(full, 16); const r = (int >> 16) & 255; const g = (int >> 8) & 255; const b = int & 255; return `rgba(${r}, ${g}, ${b}, ${alpha})`; }
     function showChartTooltip(svg, month, series, event) { const tip = svg.closest('.chart-card')?.querySelector('.chart-tooltip'); if (!tip) return; tip.innerHTML = `<strong>${periodTitle(month)}</strong>${series.map(item => `<span>${item.label}: <b>${item.format(item.value(month))}</b></span>`).join('')}`; tip.hidden = false; const card = svg.closest('.chart-card').getBoundingClientRect(); const tipBox = tip.getBoundingClientRect(); const pointerX = event && Number.isFinite(event.clientX) ? event.clientX - card.left : card.width / 2; const pointerY = event && Number.isFinite(event.clientY) ? event.clientY - card.top : 76; let left = pointerX + 14; let top = pointerY + 14; if (left + tipBox.width > card.width - 8) left = pointerX - tipBox.width - 14; if (top + tipBox.height > card.height - 8) top = pointerY - tipBox.height - 14; tip.style.left = `${Math.max(8, left)}px`; tip.style.top = `${Math.max(8, top)}px`; }
     function hideChartTooltip(svg) { const tip = svg.closest('.chart-card')?.querySelector('.chart-tooltip'); if (tip) tip.hidden = true; }
-    function chartX(index, count, pad, plotW) { if (count <= 1) return pad.left + plotW / 2; const inset = count === 2 ? plotW * 0.1 : count === 3 ? plotW * 0.14 : count === 4 ? plotW * 0.06 : 0; const usable = plotW - inset * 2; return pad.left + inset + index * (usable / (count - 1)); }
-    function chartLabelX(index, count, x, pad, width) { if (count <= 1) return { x, anchor: 'middle' }; if (index === 0) return { x: Math.max(x + 14, pad.left + 24), anchor: 'start' }; if (index === count - 1) return { x: Math.min(x - 14, width - pad.right - 24), anchor: 'end' }; return { x, anchor: 'middle' }; }
-    function drawAxes(svg, max, width, height, pad, formatter) { const plotH = height - pad.top - pad.bottom; axisLabels(max, formatter).forEach(({ value, label }) => { const y = pad.top + (1 - value / max) * plotH; svg.insertAdjacentHTML('beforeend', `<line x1="${pad.left}" y1="${y}" x2="${width - pad.right}" y2="${y}" stroke="#d9e3f0" stroke-width="1"></line><text x="${pad.left - 9}" y="${y + 4}" text-anchor="end" fill="#647084" font-size="11" font-weight="700">${label}</text>`); }); }
-    function drawCategoryLabels(svg, data, width, height, pad) { const plotW = width - pad.left - pad.right; const every = labelEvery(data); data.forEach((month, index) => { if (index % every && index !== data.length - 1) return; const x = chartX(index, data.length, pad, plotW); svg.insertAdjacentHTML('beforeend', `<text x="${x}" y="${height - 10}" text-anchor="middle" fill="#647084" font-size="10" font-weight="700">${shortMonth(month)}</text>`); }); }
-    function drawBarChart(svgId, data, metric, options = {}) { const svg = document.querySelector(svgId); if (!svg) return; const width = 720; const height = 248; const pad = { left: 84, right: 44, top: 52, bottom: 34 }; svg.setAttribute('viewBox', `0 0 ${width} ${height}`); svg.innerHTML = `<rect x="0" y="0" width="${width}" height="${height}" rx="8" fill="#fbfdff"></rect>`; if (!data.length) { svg.insertAdjacentHTML('beforeend', `<text x="${width / 2}" y="${height / 2}" text-anchor="middle" fill="#647084" font-size="13" font-weight="800">Выберите месяц или год в фильтре</text>`); return; } const values = data.map(metric.value); const max = niceMax(Math.max(...values, 1)); const plotW = width - pad.left - pad.right; const plotH = height - pad.top - pad.bottom; drawAxes(svg, max, width, height, pad, options.axisFormat || formatCompact); drawCategoryLabels(svg, data, width, height, pad); const slot = plotW / Math.max(data.length, 1); const barWidth = Math.min(42, slot * (data.length <= 3 ? 0.2 : 0.34)); const centers = data.map((_, index) => chartX(index, data.length, pad, plotW)); data.forEach((month, index) => { const value = metric.value(month); const xCenter = centers[index]; const barHeight = max ? (value / max) * plotH : 0; const x = xCenter - barWidth / 2; const y = pad.top + plotH - barHeight; const label = chartLabelX(index, data.length, xCenter, pad, width); svg.insertAdjacentHTML('beforeend', `<rect x="${x}" y="${y}" width="${barWidth}" height="${Math.max(barHeight, 1)}" rx="4" fill="${metric.color}"></rect><text x="${label.x}" y="${Math.max(y - 12, pad.top + 20)}" text-anchor="${label.anchor}" fill="${metric.color}" font-size="11" font-weight="800">${metric.format(value)}</text>`); }); centers.forEach((center, index) => { const prev = centers[index - 1]; const next = centers[index + 1]; const x0 = index === 0 ? Math.max(pad.left, center - 44) : (prev + center) / 2; const x1 = index === centers.length - 1 ? Math.min(width - pad.right, center + 44) : (center + next) / 2; svg.insertAdjacentHTML('beforeend', `<rect class="chart-hit" data-index="${index}" x="${x0}" y="${pad.top}" width="${x1 - x0}" height="${plotH}" fill="transparent"></rect>`); }); svg.querySelectorAll('.chart-hit').forEach(hit => { const handle = event => { const index = Number(hit.dataset.index); showChartTooltip(svg, data[index], [metric], event); }; hit.addEventListener('mouseenter', handle); hit.addEventListener('mousemove', handle); hit.addEventListener('touchstart', handle, { passive: true }); }); svg.addEventListener('mouseleave', () => hideChartTooltip(svg)); }
-    function drawAreaLineChart(svgId, data, metric, options = {}) { const svg = document.querySelector(svgId); if (!svg) return; const width = 720; const height = 248; const pad = { left: 84, right: 44, top: 52, bottom: 34 }; svg.setAttribute('viewBox', `0 0 ${width} ${height}`); svg.innerHTML = `<rect x="0" y="0" width="${width}" height="${height}" rx="8" fill="#fbfdff"></rect>`; if (!data.length) { svg.insertAdjacentHTML('beforeend', `<text x="${width / 2}" y="${height / 2}" text-anchor="middle" fill="#647084" font-size="13" font-weight="800">Выберите месяц или год в фильтре</text>`); return; } const values = data.map(metric.value); const max = niceMax(Math.max(...values, 1)); const plotW = width - pad.left - pad.right; const plotH = height - pad.top - pad.bottom; drawAxes(svg, max, width, height, pad, options.axisFormat || formatCompact); drawCategoryLabels(svg, data, width, height, pad); const positions = data.map((month, index) => { const x = chartX(index, data.length, pad, plotW); const y = pad.top + (1 - metric.value(month) / max) * plotH; return { month, x, y }; }); const linePathValue = positions.map((point, index) => `${index ? 'L' : 'M'} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`).join(' '); const areaPath = `${linePathValue} L ${positions[positions.length - 1].x.toFixed(1)} ${(pad.top + plotH).toFixed(1)} L ${positions[0].x.toFixed(1)} ${(pad.top + plotH).toFixed(1)} Z`; svg.insertAdjacentHTML('beforeend', `<path d="${areaPath}" fill="${hexToRgba(metric.color, options.fillAlpha || 0.14)}"></path><path d="${linePathValue}" fill="none" stroke="${metric.color}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path>`); positions.forEach((point, index) => { const label = chartLabelX(index, positions.length, point.x, pad, width); svg.insertAdjacentHTML('beforeend', `<circle cx="${point.x}" cy="${point.y}" r="4.1" fill="${metric.color}" stroke="#ffffff" stroke-width="2.1"></circle><text x="${label.x}" y="${Math.max(point.y - 14, pad.top + 20)}" text-anchor="${label.anchor}" fill="${metric.color}" font-size="11" font-weight="800">${metric.format(metric.value(point.month))}</text>`); }); positions.forEach((point, index) => { const prev = positions[index - 1]; const next = positions[index + 1]; const x0 = index === 0 ? Math.max(pad.left, point.x - 44) : (prev.x + point.x) / 2; const x1 = index === positions.length - 1 ? Math.min(width - pad.right, point.x + 44) : (point.x + next.x) / 2; svg.insertAdjacentHTML('beforeend', `<rect class="chart-hit" data-index="${index}" x="${x0}" y="${pad.top}" width="${x1 - x0}" height="${plotH}" fill="transparent"></rect>`); }); svg.querySelectorAll('.chart-hit').forEach(hit => { const handle = event => { const index = Number(hit.dataset.index); const point = positions[index]; svg.querySelectorAll('.chart-focus').forEach(node => node.remove()); svg.insertAdjacentHTML('beforeend', `<line class="chart-focus" x1="${point.x}" y1="${pad.top}" x2="${point.x}" y2="${height - pad.bottom}" stroke="#b8c5d8" stroke-width="1.4" stroke-dasharray="4 4"></line><circle class="chart-focus" cx="${point.x}" cy="${point.y}" r="6" fill="${metric.color}" stroke="#ffffff" stroke-width="2.4"></circle>`); showChartTooltip(svg, point.month, [metric], event); }; hit.addEventListener('mouseenter', handle); hit.addEventListener('mousemove', handle); hit.addEventListener('touchstart', handle, { passive: true }); }); svg.addEventListener('mouseleave', () => { svg.querySelectorAll('.chart-focus').forEach(node => node.remove()); hideChartTooltip(svg); }); }
-    function drawImpressionsChart(data = selectedMonths()) { drawBarChart('#impressionsChart', data, { label: 'Показы', color: '#4a7be8', value: m => m.impressions, format: formatCompact }, { axisFormat: formatCompact }); }
-    function drawClicksChart(data = selectedMonths()) { drawAreaLineChart('#clicksChart', data, { label: 'Клики', color: '#0ea37f', value: m => m.clicks, format: value => fmtInt.format(Math.round(value)) }, { axisFormat: formatCompact, fillAlpha: 0.15 }); }
-    function drawSpendChart(data = selectedMonths()) { drawBarChart('#spendChart', data, { label: 'Расход', color: '#d9962c', value: m => m.spend, format: formatMoney }, { axisFormat: formatMoneyCompact }); }
-    function drawCpaChart(data = selectedMonths()) { drawAreaLineChart('#cpaChart', data, { label: 'CPA', color: '#6f5ae6', value: m => m.cpa, format: formatMoney }, { axisFormat: formatMoneyCompact, fillAlpha: 0.14 }); }
-    function drawLeadsChart(data = selectedMonths()) { drawBarChart('#leadsChart', data, { label: 'Лиды', color: '#3fa4a4', value: m => m.conv, format: value => fmtInt.format(Math.round(value)) }, { axisFormat: value => fmtInt.format(Math.round(value)) }); }
-    function drawCtrChart(data = selectedMonths()) { drawAreaLineChart('#ctrChart', data, { label: 'CTR', color: '#e74b4b', value: m => m.ctr, format: formatPercent }, { axisFormat: value => `${value.toFixed(2).replace('.', ',')}%`, fillAlpha: 0.14 }); }
+    function drawChart(svgId, data, series, options = {}) { const svg = document.querySelector(svgId); const width = 720; const height = 220; const pad = { left: 70, right: 22, top: 20, bottom: 32 }; svg.setAttribute('viewBox', `0 0 ${width} ${height}`); svg.innerHTML = `<rect x="0" y="0" width="${width}" height="${height}" rx="8" fill="#fbfdff"></rect>`; if (!data.length) { svg.insertAdjacentHTML('beforeend', `<text x="${width / 2}" y="${height / 2}" text-anchor="middle" fill="#647084" font-size="13" font-weight="800">Выберите месяц или год в фильтре</text>`); return; } const allValues = series.flatMap(item => data.map(month => item.value(month))); const max = niceMax(Math.max(...allValues, 1)); const plotW = width - pad.left - pad.right; const plotH = height - pad.top - pad.bottom; axisLabels(max, options.axisFormat || formatCompact).forEach(({ value, label }) => { const y = pad.top + (1 - value / max) * plotH; svg.insertAdjacentHTML('beforeend', `<line x1="${pad.left}" y1="${y}" x2="${width - pad.right}" y2="${y}" stroke="#e2e8f1" stroke-width="1"></line><text x="${pad.left - 9}" y="${y + 4}" text-anchor="end" fill="#647084" font-size="11" font-weight="700">${label}</text>`); }); const every = labelEvery(data); data.forEach((month, index) => { if (index % every && index !== data.length - 1) return; const x = data.length > 1 ? pad.left + index * (plotW / (data.length - 1)) : pad.left + plotW / 2; svg.insertAdjacentHTML('beforeend', `<text x="${x}" y="${height - 10}" text-anchor="middle" fill="#647084" font-size="10" font-weight="700">${shortMonth(month)}</text>`); }); const positions = data.map((month, index) => { const x = data.length > 1 ? pad.left + index * (plotW / (data.length - 1)) : pad.left + plotW / 2; return { month, x }; }); series.forEach(item => { const pts = positions.map(pos => [pos.x, pad.top + (1 - item.value(pos.month) / max) * plotH]); svg.insertAdjacentHTML('beforeend', `<path d="${linePath(pts)}" fill="none" stroke="${item.color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>`); pts.forEach(([x, y]) => svg.insertAdjacentHTML('beforeend', `<circle cx="${x}" cy="${y}" r="4.2" fill="#ffffff" stroke="${item.color}" stroke-width="2.4"></circle>`)); }); positions.forEach((pos, index) => { const x0 = index === 0 ? pad.left : (positions[index - 1].x + pos.x) / 2; const x1 = index === positions.length - 1 ? width - pad.right : (pos.x + positions[index + 1].x) / 2; svg.insertAdjacentHTML('beforeend', `<rect class="chart-hit" data-index="${index}" x="${x0}" y="${pad.top}" width="${x1 - x0}" height="${plotH}" fill="transparent"></rect>`); }); svg.querySelectorAll('.chart-hit').forEach(hit => { const handle = event => { const index = Number(hit.dataset.index); const pos = positions[index]; const lineX = pos.x; svg.querySelectorAll('.chart-focus').forEach(node => node.remove()); svg.insertAdjacentHTML('beforeend', `<line class="chart-focus" x1="${lineX}" y1="${pad.top}" x2="${lineX}" y2="${height - pad.bottom}" stroke="#9aa8ba" stroke-width="1.8" stroke-dasharray="4 4"></line>`); series.forEach(item => { const y = pad.top + (1 - item.value(pos.month) / max) * plotH; svg.insertAdjacentHTML('beforeend', `<circle class="chart-focus" cx="${lineX}" cy="${y}" r="6" fill="${item.color}" stroke="#ffffff" stroke-width="2.5"></circle>`); }); showChartTooltip(svg, pos.month, series, event); }; hit.addEventListener('mouseenter', handle); hit.addEventListener('mousemove', handle); hit.addEventListener('touchstart', handle, { passive: true }); }); svg.addEventListener('mouseleave', () => { svg.querySelectorAll('.chart-focus').forEach(node => node.remove()); hideChartTooltip(svg); }); }
+    function drawTrafficVolumeChart(data = selectedMonths()) { drawChart('#trafficVolumeChart', data, [{ label: 'Показы', color: '#2d6cdf', value: m => m.impressions, format: formatCompact }, { label: 'Клики', color: '#0b9696', value: m => m.clicks, format: formatCompact }], { axisFormat: formatCompact }); }
+    function drawSpendChart(data = selectedMonths()) { drawChart('#spendChart', data, [{ label: 'Расход', color: '#d99524', value: m => m.spend, format: formatMoney }], { axisFormat: formatMoneyCompact }); }
+    function drawConversionsChart(data = selectedMonths()) { drawChart('#conversionsChart', data, [{ label: 'Конверсии', color: '#129766', value: m => m.conv, format: value => `${fmtInt.format(value)} лидов` }], { axisFormat: value => fmtInt.format(Math.round(value)) }); }
+    function drawCpaChart(data = selectedMonths()) { drawChart('#cpaChart', data, [{ label: 'Цена конверсии', color: '#d64545', value: m => m.cpa, format: formatMoney }], { axisFormat: formatMoneyCompact }); }
+    function drawQualityChart(data = selectedMonths()) { drawChart('#qualityChart', data, [{ label: 'CTR', color: '#7156c6', value: m => m.ctr, format: formatPercent }, { label: 'CPC', color: '#d99524', value: m => m.cpc, format: formatMoney }], { axisFormat: value => value >= 10 ? `${Math.round(value)}` : value.toFixed(1) }); }
     
-    function renderSingleMonthOverview(data = selectedMonths()) { const section = document.querySelector('[data-single-month]'); const grid = document.querySelector('[data-single-month-grid]'); const title = document.querySelector('[data-single-month-title]'); const subtitle = document.querySelector('[data-single-month-subtitle]'); const charts = document.querySelector('[data-charts-grid]'); if (!section || !grid || !title || !subtitle || !charts) return; const single = data.length === 1 ? data[0] : null; section.hidden = !single; charts.hidden = !!single; section.style.display = single ? 'block' : 'none'; charts.style.display = single ? 'none' : 'grid'; if (!single) { grid.innerHTML = ''; return; } title.textContent = `${single.name} ${single.year}`; subtitle.textContent = `Фактические показатели за период ${single.period}.`; const metrics = [{ label: 'Показы', value: fmtInt.format(single.impressions), note: 'Охват объявлений' }, { label: 'Клики', value: fmtInt.format(single.clicks), note: 'Переходы по рекламе' }, { label: 'CTR', value: formatPercent(single.ctr), note: 'Клики / показы' }, { label: 'Расход', value: formatMoney(single.spend), note: 'Рекламный бюджет' }, { label: 'CPC', value: formatMoney(single.cpc), note: 'Расход / клики' }, { label: 'Лиды', value: fmtInt.format(single.conv), note: 'Конверсии из рекламы' }, { label: 'CPA', value: formatMoney(single.cpa), note: 'Расход / лиды' }, { label: 'CR в лид', value: formatPercent(single.cr), note: 'Лиды / клики' }]; grid.innerHTML = metrics.map(item => `<article class="single-month-card"><div class="label">${item.label}</div><div class="value">${item.value}</div><div class="note">${item.note}</div></article>`).join(''); }
+    function renderSingleMonthOverview(data = selectedMonths()) { const section = document.querySelector('[data-single-month]'); const grid = document.querySelector('[data-single-month-grid]'); const title = document.querySelector('[data-single-month-title]'); const subtitle = document.querySelector('[data-single-month-subtitle]'); const charts = document.querySelector('[data-charts-grid]'); if (!section || !grid || !title || !subtitle || !charts) return; const single = data.length === 1 ? data[0] : null; section.hidden = !single; charts.hidden = !!single; if (!single) { grid.innerHTML = ''; return; } title.textContent = `${single.name} ${single.year}`; subtitle.textContent = `Фактические показатели за период ${single.period}.`; const metrics = [{ label: 'Показы', value: fmtInt.format(single.impressions), note: 'Охват объявлений' }, { label: 'Клики', value: fmtInt.format(single.clicks), note: 'Переходы по рекламе' }, { label: 'CTR', value: formatPercent(single.ctr), note: 'Клики / показы' }, { label: 'Расход', value: formatMoney(single.spend), note: 'Рекламный бюджет' }, { label: 'CPC', value: formatMoney(single.cpc), note: 'Расход / клики' }, { label: 'Лиды', value: fmtInt.format(single.conv), note: 'Конверсии из рекламы' }, { label: 'CPA', value: formatMoney(single.cpa), note: 'Расход / лиды' }, { label: 'CR в лид', value: formatPercent(single.cr), note: 'Лиды / клики' }]; grid.innerHTML = metrics.map(item => `<article class="single-month-card"><div class="label">${item.label}</div><div class="value">${item.value}</div><div class="note">${item.note}</div></article>`).join(''); }
     function renderTable(data = selectedMonths()) { const rows = document.querySelector('#summaryRows'); rows.innerHTML = data.map((m, i) => { const prev = i === 0 ? null : data[i - 1]; const cpaTrend = !prev ? 'Старт' : m.cpa <= prev.cpa ? 'Улучшение' : 'Просадка'; const trendClass = !prev || m.cpa <= prev.cpa ? 'good-text' : 'bad-text'; return `<tr><td><strong>${m.name} ${m.year}</strong></td><td>${fmtInt.format(m.impressions)}</td><td>${fmtInt.format(m.clicks)}</td><td>${m.ctr.toFixed(2)}</td><td>${money(m.spend)}</td><td>${money(m.cpc)}</td><td class="conversion">${m.conv}</td><td>${money(m.cpa)}</td><td class="${trendClass}">${cpaTrend}</td></tr>`; }).join(''); }
     function setTrend(node, note) { node.textContent = note.text; node.classList.toggle('good', note.className === 'good'); node.classList.toggle('bad', note.className === 'bad'); node.classList.toggle('neutral', note.className === 'neutral'); }
-    function updateKpis(data = selectedMonths()) { const total = aggregate(data); const years = selectedYears(data); const isFullSingleYear = years.length === 1 && data.length === yearMonths(years[0]).length; const periodText = isFullSingleYear ? `Сумма за ${years[0]}` : `Выбрано: ${data.length} мес.`; const notes = { spend: periodText, conv: { text: `Всего лидов: ${total.conv}`, className: 'good' }, cpa: { text: isFullSingleYear ? `CPA за ${years[0]}` : 'CPA по выбранным месяцам', className: total.cpa ? 'good' : 'neutral' }, cpc: { text: isFullSingleYear ? `CPC за ${years[0]}` : 'CPC по выбранным месяцам', className: 'good' } }; document.querySelector('[data-kpi="spend"]').textContent = `${money(total.spend)} ₽`; document.querySelector('[data-kpi="conv"]').textContent = total.conv; document.querySelector('[data-kpi="cpa"]').textContent = `${money(total.cpa)} ₽`; document.querySelector('[data-kpi="cpc"]').textContent = `${money(total.cpc)} ₽`; document.querySelector('[data-kpi-note="spend"]').textContent = notes.spend; setTrend(document.querySelector('[data-kpi-note="conv"]'), notes.conv); setTrend(document.querySelector('[data-kpi-note="cpa"]'), notes.cpa); setTrend(document.querySelector('[data-kpi-note="cpc"]'), notes.cpc); const summary = document.querySelector('[data-selection-summary]'); if (summary) summary.textContent = `Период: ${selectionLabel(data)}. Можно сравнивать месяцы из разных лет.`; }
+    function updateKpis(data = selectedMonths()) { const total = aggregate(data); const years = selectedYears(data); const isFullSingleYear = years.length === 1 && data.length === yearMonths(years[0]).length; const periodText = isFullSingleYear ? `Сумма за ${years[0]}` : `Выбрано: ${data.length} мес.`; const notes = { spend: periodText, conv: { text: `Всего лидов: ${total.conv}`, className: 'good' }, cpa: { text: isFullSingleYear ? `CPA за ${years[0]}` : 'CPA по выбранным месяцам', className: total.cpa ? 'good' : 'neutral' }, cpc: { text: isFullSingleYear ? `CPC за ${years[0]}` : 'CPC по выбранным месяцам', className: 'good' } }; document.querySelector('[data-kpi="spend"]').textContent = `${money(total.spend)} ₽`; document.querySelector('[data-kpi="conv"]').textContent = total.conv; document.querySelector('[data-kpi="cpa"]').textContent = `${money(total.cpa)} ₽`; document.querySelector('[data-kpi="cpc"]').textContent = `${money(total.cpc)} ₽`; document.querySelector('[data-kpi-note="spend"]').textContent = notes.spend; setTrend(document.querySelector('[data-kpi-note="conv"]'), notes.conv); setTrend(document.querySelector('[data-kpi-note="cpa"]'), notes.cpa); setTrend(document.querySelector('[data-kpi-note="cpc"]'), notes.cpc); const summary = document.querySelector('[data-selection-summary]'); if (summary) summary.textContent = `Период: ${selectionLabel(data)}. Обычный клик выбирает один месяц, Ctrl или Shift позволяют сравнивать несколько месяцев.`; }
     function periodChips(data = selectedMonths()) { if (!data.length) return ['Ничего не выбрано']; const years = selectedYears(data); return years.map(year => { const yearData = data.filter(month => month.year === year); if (yearData.length === yearMonths(year).length) return `${year} за год`; if (yearData.length === 1) return `${shortMonth(yearData[0])}`; return `${shortMonth(yearData[0])} - ${shortMonth(yearData[yearData.length - 1])}`; }); }
-    function renderMonthExplorer(data = selectedMonths()) { const explorer = document.querySelector('.month-explorer'); if (!explorer) return; if (!data.length) { explorer.innerHTML = `<div class="chart-head"><div><h2>Статистика по месяцам</h2><div class="chart-sub">Выберите один или несколько месяцев в верхнем фильтре.</div></div></div>`; return; } explorer.innerHTML = `<div class="chart-head"><div><h2>Статистика по месяцам</h2><div class="chart-sub">Компактная сводка по выбранным месяцам.</div></div></div>${data.map(month => `<div class="month-panel active" data-panel="${month.key}" data-year="${month.year}" role="tabpanel"><div class="panel-head"><div><h3>${month.name} ${month.year}</h3><div class="panel-period">${month.period}</div></div><span class="trend ${month.trendClass}">${month.trendLabel}</span></div><div class="panel-body"><div class="mini-stats"><div class="mini-stat"><span>Показы</span><strong>${fmtInt.format(month.impressions)}</strong></div><div class="mini-stat"><span>Клики</span><strong>${fmtInt.format(month.clicks)}</strong></div><div class="mini-stat"><span>Расход</span><strong>${formatMoney(month.spend)}</strong></div><div class="mini-stat conversion"><span>Конверсия</span><strong>${fmtInt.format(month.conv)}</strong></div><div class="mini-stat"><span>CPC</span><strong>${formatMoney(month.cpc)}</strong></div><div class="mini-stat"><span>CTR</span><strong>${formatPercent(month.ctr)}</strong></div></div><div class="month-comment"><div class="campaign-list"><table class="campaign-table"><thead><tr><th>Кампания</th><th>Показы</th><th>Клики</th><th>Лиды</th><th>Расход</th><th>CPA</th></tr></thead><tbody>${(month.campaigns || []).map(campaign => `<tr><td class="campaign-name">${campaign.name}</td><td class="campaign-impressions">${campaign.impressions ? fmtInt.format(campaign.impressions) : '0'}</td><td class="campaign-clicks">${campaign.clicks ? fmtInt.format(campaign.clicks) : '0'}</td><td class="campaign-leads">${fmtInt.format(campaign.conv || 0)}</td><td class="campaign-spend">${formatMoney(campaign.spend || 0)}</td><td class="campaign-cpa">${campaign.conv ? formatMoney(campaign.cpa || 0) : 'без лидов'}</td></tr>`).join('')}</tbody></table></div></div></div></div>`).join('')}`; setupCampaignToggles(); }
     function syncButtons() { const data = selectedMonths(); document.querySelectorAll('[data-month]').forEach(input => { const active = selectedKeys.includes(input.dataset.month); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); document.querySelectorAll('[data-range="year"]').forEach(input => { const year = Number(input.dataset.year); const active = fullYearSelected(year); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); const trigger = document.querySelector('[data-period-trigger] strong'); if (trigger) trigger.textContent = selectionLabel(data); const chips = document.querySelector('[data-selected-chips]'); if (chips) chips.innerHTML = periodChips(data).map(label => `<span class="period-chip">${label}</span>`).join(''); }
-    function renderMobileMonthGroups() { const root = document.querySelector('[data-mobile-month-groups]'); if (!root) return; const years = [...new Set(months.map(month => month.year))].sort(); root.innerHTML = `<button type="button" class="mobile-period-clear" data-mobile-clear>Без выбора</button>${years.map(year => { const items = yearMonths(year); const yearActive = fullYearSelected(year); return `<section class="mobile-month-group" data-mobile-year-group="${year}"><div class="mobile-month-head"><div class="mobile-year-title">${year}</div><button type="button" class="mobile-year-btn${yearActive ? ' active' : ''}" data-mobile-year-btn="${year}">Весь год<small>${year}</small></button></div><div class="mobile-month-grid">${items.map(month => `<button type="button" class="mobile-month-btn${selectedKeys.includes(month.key) ? ' active' : ''}" data-mobile-month-btn="${month.key}" data-year="${month.year}">${month.name.slice(0, 3).toLowerCase()}.<small>${month.conv} лидов</small></button>`).join('')}</div></section>`; }).join('')}`; root.querySelector('[data-mobile-clear]')?.addEventListener('click', () => { selectedKeys = []; renderDashboard(); }); root.querySelectorAll('[data-mobile-month-btn]').forEach(button => { button.addEventListener('click', () => { const key = button.dataset.mobileMonthBtn; const month = months.find(item => item.key === key); if (!month) return; selectedYear = month.year; selectedKeys = selectedKeys.includes(key) ? selectedKeys.filter(item => item !== key) : [...new Set([...selectedKeys, key])]; renderDashboard(); }); }); root.querySelectorAll('[data-mobile-year-btn]').forEach(button => { button.addEventListener('click', () => { const year = Number(button.dataset.mobileYearBtn); const keys = yearMonths(year).map(month => month.key); selectedYear = year; selectedKeys = fullYearSelected(year) ? selectedKeys.filter(key => !keys.includes(key)) : [...new Set([...selectedKeys, ...keys])]; renderDashboard(); }); }); }
-    function syncMobilePeriodPicker() { const yearSelect = document.querySelector('[data-mobile-year]'); const monthSelect = document.querySelector('[data-mobile-month]'); if (!yearSelect || !monthSelect) return; const data = selectedMonths(); const currentYear = data.length === 1 ? data[0].year : selectedYear; yearSelect.value = String(currentYear); const monthsForYear = yearMonths(currentYear); const sameYearData = data.filter(month => month.year === currentYear); const isFullYear = sameYearData.length === monthsForYear.length && sameYearData.length > 0 && data.length === sameYearData.length; const isSingleMonth = data.length === 1 && data[0].year === currentYear; const isCustom = data.length > 1 && !isFullYear; const options = [`<option value="">Все месяцы ${currentYear}</option>`]; if (isCustom) options.push('<option value="__custom__">Несколько месяцев</option>'); options.push(...monthsForYear.map(month => `<option value="${month.key}">${month.name} ${month.year}</option>`)); monthSelect.innerHTML = options.join(''); monthSelect.value = isSingleMonth ? data[0].key : isCustom ? '__custom__' : ''; }
-    function syncMobileCompareToggle() { const button = document.querySelector('[data-mobile-compare-toggle]'); const filter = document.querySelector('.period-filter'); if (!button || !filter) return; const expanded = filter.classList.contains('mobile-open'); button.textContent = expanded ? 'Скрыть сравнение месяцев' : 'Сравнить месяцы из разных лет'; button.setAttribute('aria-expanded', expanded ? 'true' : 'false'); }
-    function setMobileChart(activeKey = 'traffic') { const cards = document.querySelectorAll('[data-chart-card]'); const buttons = document.querySelectorAll('.mobile-chart-btn'); cards.forEach(card => card.classList.toggle('mobile-active', card.dataset.chartCard === activeKey)); buttons.forEach(button => button.classList.toggle('active', button.dataset.chartTarget === activeKey)); }
     function syncPanels() { document.querySelectorAll('.month-panel').forEach(panel => { const active = selectedKeys.includes(panel.dataset.panel); panel.classList.toggle('active', active); }); }
-    function renderDashboard() { const data = selectedMonths(); syncButtons(); renderMobileMonthGroups(); syncMobilePeriodPicker(); syncMobileCompareToggle(); updateKpis(data); renderSingleMonthOverview(data); if (data.length !== 1) { drawImpressionsChart(data); drawClicksChart(data); drawSpendChart(data); drawCpaChart(data); drawLeadsChart(data); drawCtrChart(data); } renderTable(data); renderMonthExplorer(data); }
+    function renderDashboard() { const data = selectedMonths(); syncButtons(); syncPanels(); updateKpis(data); renderSingleMonthOverview(data); if (data.length !== 1) { drawTrafficVolumeChart(data); drawSpendChart(data); drawConversionsChart(data); drawCpaChart(data); drawQualityChart(data); } renderTable(data); }
     function setupCampaignToggles() { document.querySelectorAll('.month-comment').forEach(comment => { const list = comment.querySelector('.campaign-list'); if (!list || comment.querySelector('.campaign-toggle')) return; const button = document.createElement('button'); button.type = 'button'; button.className = 'campaign-toggle'; button.textContent = 'Подробно по кампаниям'; button.addEventListener('click', () => { const open = comment.classList.toggle('campaigns-open'); button.textContent = open ? 'Скрыть кампании' : 'Подробно по кампаниям'; }); comment.insertBefore(button, list); }); }
-    function initMobileEnhancements() { const yearSelect = document.querySelector('[data-mobile-year]'); const monthSelect = document.querySelector('[data-mobile-month]'); const compareButton = document.querySelector('[data-mobile-compare-toggle]'); const filter = document.querySelector('.period-filter'); yearSelect?.addEventListener('change', () => { selectedYear = Number(yearSelect.value) || defaultYear; selectedKeys = yearMonths(selectedYear).map(month => month.key); renderDashboard(); }); monthSelect?.addEventListener('change', () => { const value = monthSelect.value; if (value === '__custom__') return; if (!value) { selectedKeys = yearMonths(selectedYear).map(month => month.key); } else { const month = months.find(item => item.key === value); if (!month) return; selectedYear = month.year; selectedKeys = [value]; } renderDashboard(); }); compareButton?.addEventListener('click', () => { if (!filter) return; filter.classList.toggle('mobile-open'); syncMobileCompareToggle(); }); document.querySelectorAll('.mobile-chart-btn').forEach(button => { button.addEventListener('click', () => setMobileChart(button.dataset.chartTarget)); }); setMobileChart('impressions'); syncMobileCompareToggle(); }
-    function initMonthExplorer() { setupCampaignToggles(); initMobileEnhancements(); const menu = document.querySelector('[data-period-menu]'); const trigger = document.querySelector('[data-period-trigger]'); const setMenuOpen = open => { if (!menu || !trigger) return; menu.hidden = !open; trigger.setAttribute('aria-expanded', open ? 'true' : 'false'); }; setMenuOpen(false); trigger?.addEventListener('click', event => { event.stopPropagation(); setMenuOpen(menu.hidden); }); document.addEventListener('click', event => { if (!event.target.closest('.period-dropdown')) setMenuOpen(false); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenuOpen(false); }); document.querySelectorAll('[data-clear-period]').forEach(button => { button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); selectedKeys = []; renderDashboard(); }); }); document.querySelectorAll('.period-option input').forEach(input => { input.addEventListener('change', event => { event.stopPropagation(); if (input.dataset.range === 'year') { const year = Number(input.dataset.year); const keys = yearMonths(year).map(month => month.key); selectedYear = year; selectedKeys = input.checked ? [...new Set([...selectedKeys, ...keys])] : selectedKeys.filter(key => !keys.includes(key)); } else { const key = input.dataset.month; const month = months.find(item => item.key === key); if (!month) return; selectedYear = month.year; selectedKeys = input.checked ? [...new Set([...selectedKeys, key])] : selectedKeys.filter(item => item !== key); } renderDashboard(); }); }); renderDashboard(); }
+    function initMonthExplorer() { setupCampaignToggles(); const menu = document.querySelector('[data-period-menu]'); const trigger = document.querySelector('[data-period-trigger]'); const setMenuOpen = open => { if (!menu || !trigger) return; menu.hidden = !open; trigger.setAttribute('aria-expanded', open ? 'true' : 'false'); }; trigger?.addEventListener('click', event => { event.stopPropagation(); setMenuOpen(menu.hidden); }); document.addEventListener('click', event => { if (!event.target.closest('.period-dropdown')) setMenuOpen(false); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenuOpen(false); }); document.querySelectorAll('[data-clear-period]').forEach(button => { button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); selectedKeys = []; renderDashboard(); }); }); document.querySelectorAll('.period-option').forEach(option => { option.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); const input = option.querySelector('input'); if (!input) return; if (input.dataset.range === 'year') { const year = Number(input.dataset.year); const keys = yearMonths(year).map(month => month.key); const active = fullYearSelected(year); selectedYear = year; selectedKeys = active ? selectedKeys.filter(key => !keys.includes(key)) : [...new Set([...selectedKeys, ...keys])]; } else { const key = input.dataset.month; const month = months.find(item => item.key === key); if (!month) return; const active = selectedKeys.includes(key); const additive = event.ctrlKey || event.metaKey || event.shiftKey; selectedYear = month.year; if (additive) { selectedKeys = active ? selectedKeys.filter(item => item !== key) : [...new Set([...selectedKeys, key])]; } else { selectedKeys = active && selectedKeys.length === 1 ? [] : [key]; } } renderDashboard(); }); }); renderDashboard(); }
     initMonthExplorer();
   </script>
 
