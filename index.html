@@ -1060,11 +1060,12 @@
       h1 { font-size: 19px; }
       .agency img { width: 178px; }
       .period-filter { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
-      .period-dropdown,
+      .period-dropdown { position: static; }
       .period-trigger,
-      .period-menu,
       .mobile-period-picker,
       .mobile-compare-toggle { display: none; }
+      .period-menu,
+      .period-menu[hidden] { display: block; position: static; top: auto; left: auto; width: 100%; padding: 0; border: none; background: transparent; box-shadow: none; }
       .mobile-month-groups { display: grid; gap: 8px; }
       .mobile-month-group { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; box-shadow: 0 12px 28px rgba(47, 72, 105, .08); }
       .mobile-month-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
