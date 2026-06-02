@@ -1059,16 +1059,26 @@
       .wrap { width: min(100% - 16px, 1320px); }
       h1 { font-size: 19px; }
       .agency img { width: 178px; }
-      .period-filter { display: none; }
-      .period-filter.mobile-open { display: block; margin-top: 8px; }
-      .mobile-period-picker { display: grid; }
-      .mobile-compare-toggle { display: inline-flex; align-items: center; justify-content: center; }
+      .period-filter { display: grid; gap: 8px; margin-top: 8px; }
+      .period-dropdown { position: static; }
+      .period-trigger,
+      .mobile-period-picker,
+      .mobile-compare-toggle { display: none; }
+      .period-menu,
+      .period-menu[hidden] { display: block; position: static; top: auto; left: auto; width: 100%; padding: 0; border: none; background: transparent; box-shadow: none; }
+      .period-group { padding: 10px; border: 1px solid var(--line); border-radius: 10px; background: #ffffff; box-shadow: 0 12px 28px rgba(47, 72, 105, .08); }
+      .period-group + .period-group { margin-top: 8px; padding-top: 10px; }
+      .period-group-head { align-items: flex-start; }
+      .period-year { font-size: 16px; }
       .mobile-chart-nav { display: flex; }
       .charts-grid { grid-template-columns: 1fr; }
       .charts-grid .chart-card { display: none; }
       .charts-grid .chart-card.mobile-active { display: block; }
       .kpis, .mini-stats, .single-month-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .period-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .period-option { min-height: 44px; }
+      .selected-periods-wrap { gap: 8px; }
+      .selected-periods { min-height: 0; }
       .card .value { font-size: 20px; }
       .month-explorer { padding: 8px; }
       .month-panel { border-radius: 10px; }
