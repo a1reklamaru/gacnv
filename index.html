@@ -882,8 +882,9 @@
       }
     }
   
+  
 
-    /* Compact readable layout for the public GAK dashboard. */
+    /* Compact readable layout for the public dashboard. */
     body { font-size: 13px; }
     .wrap { width: min(1320px, calc(100% - 24px)); }
     header { position: sticky; top: 0; z-index: 30; box-shadow: 0 8px 22px rgba(23, 32, 51, .05); }
@@ -963,6 +964,97 @@
       .card .value { font-size: 20px; }
     }
 
+  
+  
+
+    /* Compact readable layout for the public GAK dashboard. */
+    body { font-size: 13px; }
+    .wrap { width: min(1320px, calc(100% - 24px)); }
+    header { position: sticky; top: 0; z-index: 30; box-shadow: 0 8px 22px rgba(23, 32, 51, .05); }
+    .topbar { grid-template-columns: minmax(0, 1fr) auto; gap: 14px; padding: 12px 0 10px; }
+    .brand { gap: 3px; }
+    h1 { font-size: 22px; line-height: 1.18; }
+    .subtitle { max-width: 760px; font-size: 12px; line-height: 1.3; }
+    .report-link { margin-top: 5px; padding: 6px 9px; font-size: 12px; }
+    .agency { margin-bottom: 5px; padding: 5px 8px; gap: 8px; }
+    .agency img { width: 210px; }
+    main { padding: 10px 0 24px; }
+    .month-switcher, .chart-card, .table-card, .month-explorer, .card { box-shadow: 0 10px 24px rgba(29, 45, 73, .06); }
+    .month-switcher { margin-bottom: 10px; padding: 10px; }
+    .month-switcher h2, .chart-head h2 { font-size: 16px; line-height: 1.2; }
+    .month-switcher p, .chart-sub { font-size: 12px; line-height: 1.25; }
+    .period-filter { grid-template-columns: minmax(240px, 360px) 1fr; gap: 9px; margin-top: 8px; }
+    .period-trigger { min-height: 44px; padding: 8px 36px 8px 10px; }
+    .period-trigger::after { right: 13px; top: 17px; }
+    .period-trigger strong { font-size: 14px; }
+    .period-trigger small, .period-chip, .period-clear { font-size: 11px; }
+    .selected-periods { min-height: 44px; gap: 5px; }
+    .period-chip, .period-clear { min-height: 24px; padding: 4px 8px; }
+    .period-menu { width: min(620px, calc(100vw - 32px)); padding: 9px; }
+    .period-options { grid-template-columns: repeat(6, minmax(66px, 1fr)); gap: 5px; }
+    .period-option { min-height: 34px; padding: 5px; font-size: 12px; }
+    .period-option small { font-size: 9px; }
+    .kpis { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin-bottom: 10px; }
+    .card { padding: 11px 12px; border-radius: 8px; }
+    .card .label { font-size: 11px; }
+    .card .value { margin-top: 5px; font-size: 23px; line-height: 1.08; white-space: nowrap; }
+    .trend { margin-top: 7px; min-height: 24px; padding: 4px 7px; font-size: 11px; }
+    .charts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 10px; }
+    .single-month-overview { margin-bottom: 10px; padding: 10px; }
+    .single-month-overview[hidden],
+    .charts-grid[hidden] { display: none !important; }
+    .single-month-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; }
+    .single-month-card { padding: 11px 12px; border: 1px solid var(--line); border-radius: 8px; background: #ffffff; }
+    .single-month-card .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+    .single-month-card .value { margin-top: 5px; font-size: 23px; line-height: 1.08; font-weight: 800; white-space: nowrap; }
+    .single-month-card .note { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.25; }
+    .chart-card { position: relative; padding: 10px; overflow: visible; border-radius: 8px; }
+    .chart-head { gap: 8px; margin-bottom: 7px; }
+    .legend { gap: 7px; font-size: 11px; }
+    .legend i { width: 8px; height: 8px; }
+    .chart { height: 188px; min-height: 188px; overflow: visible; }
+    .chart-tooltip { position: absolute; z-index: 50; min-width: 150px; max-width: 230px; padding: 9px 10px; border: 1px solid #d8e0ec; border-radius: 8px; background: #ffffff; color: var(--ink); box-shadow: 0 14px 32px rgba(23, 32, 51, .18); pointer-events: none; font-size: 12px; line-height: 1.35; }
+    .chart-tooltip strong { display: block; margin-bottom: 5px; font-size: 12px; line-height: 1.25; }
+    .chart-tooltip span { display: block; color: var(--muted); white-space: nowrap; }
+    .chart-tooltip b { color: var(--ink); }
+    .table-card { margin-bottom: 10px; padding: 10px; overflow-x: auto; }
+    .table-card table { min-width: 900px; }
+    .table-card th, .table-card td { padding: 7px 8px; font-size: 12px; line-height: 1.25; white-space: nowrap; }
+    .month-explorer { padding: 10px; margin-bottom: 10px; }
+    .month-panel:hover, .card:hover { transform: none; }
+    .panel-head { padding: 9px 10px; gap: 10px; }
+    .panel-head h3 { font-size: 15px; }
+    .panel-period { font-size: 11px; }
+    .mini-stats, .month-comment { padding: 9px 10px; }
+    .mini-stats { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; }
+    .mini-stat { min-height: 46px; padding: 6px 5px; }
+    .mini-stat span { font-size: 9px; }
+    .mini-stat strong { margin-top: 3px; font-size: 13px; }
+    .month-comment h4 { margin-bottom: 5px; font-size: 14px; }
+    .month-comment p { font-size: 12px; line-height: 1.34; }
+    .campaign-toggle { margin-top: 8px; padding: 6px 9px; font-size: 12px; }
+    .campaign-table { min-width: 760px; }
+    .campaign-table th, .campaign-table td { padding: 6px 7px; font-size: 12px; }
+    .campaign-table th:nth-child(n+2),
+    .campaign-table td:nth-child(n+2) { text-align: center; }
+    .campaign-table .campaign-cpa span { text-align: center; }
+    .footer-note { padding: 10px 0 18px; font-size: 12px; }
+    @media (max-width: 980px) {
+      .topbar, .period-filter { grid-template-columns: 1fr; }
+      header { position: static; }
+      .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .chart { height: 210px; min-height: 210px; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 16px, 1320px); }
+      h1 { font-size: 19px; }
+      .agency img { width: 178px; }
+      .charts-grid { grid-template-columns: 1fr; }
+      .kpis, .mini-stats, .single-month-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .period-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .card .value { font-size: 20px; }
+    }
+
   </style>
 </head>
 <body>
@@ -987,7 +1079,7 @@
     <section class="month-switcher" aria-label="Выбор периода для статистики">
       <div>
         <h2>Фильтр периода</h2>
-        <p data-selection-summary>Период: период не выбран. Можно сравнивать месяцы из разных лет.</p>
+        <p data-selection-summary>Период: период не выбран. Обычный клик выбирает один месяц, Ctrl или Shift позволяют сравнивать несколько месяцев.</p>
       </div>
       <div class="period-filter">
         <div class="period-dropdown">
@@ -1034,7 +1126,18 @@
       <article class="card"><div class="label">CPC</div><div class="value" data-kpi="cpc">0 ₽</div><div><span class="trend good" data-kpi-note="cpc">CPC по выбранным месяцам</span></div></article>
     </section>
 
-    <section class="charts-grid" aria-label="Графики эффективности">
+    
+    <section class="chart-card single-month-overview" data-single-month hidden aria-label="Показатели за выбранный месяц">
+      <div class="chart-head">
+        <div>
+          <h2 data-single-month-title>Показатели за месяц</h2>
+          <div class="chart-sub" data-single-month-subtitle>Если выбран один месяц, вместо графиков показываем фактические значения по нему.</div>
+        </div>
+      </div>
+      <div class="single-month-grid" data-single-month-grid></div>
+    </section>
+
+    <section class="charts-grid" data-charts-grid aria-label="Графики эффективности">
       <article class="chart-card"><div class="chart-head"><div><h2>Показы и клики</h2><div class="chart-sub">Динамика объема трафика по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--blue)"></i>Показы</span><span><i style="background: var(--teal)"></i>Клики</span></div></div><svg id="trafficVolumeChart" class="chart" role="img" aria-label="Динамика показов и кликов"></svg><div class="chart-tooltip" hidden></div></article>
       <article class="chart-card"><div class="chart-head"><div><h2>Расход</h2><div class="chart-sub">Динамика рекламного бюджета.</div></div><div class="legend"><span><i style="background: var(--amber)"></i>Расход</span></div></div><svg id="spendChart" class="chart" role="img" aria-label="Расход"></svg><div class="chart-tooltip" hidden></div></article>
       <article class="chart-card"><div class="chart-head"><div><h2>Конверсии</h2><div class="chart-sub">Количество лидов по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--green)"></i>Конверсии</span></div></div><svg id="conversionsChart" class="chart" role="img" aria-label="Конверсии"></svg><div class="chart-tooltip" hidden></div></article>
@@ -1047,146 +1150,397 @@
       <table><thead><tr><th>Месяц</th><th>Показы</th><th>Клики</th><th>CTR, %</th><th>Расход, ₽</th><th>CPC, ₽</th><th>Конверсия</th><th>CPA, ₽</th><th>Оценка</th></tr></thead><tbody id="summaryRows"></tbody></table>
     </section>
 
-    <section class="chart-card month-explorer" aria-label="Статистика по месяцам">
-      <div class="chart-head"><div><h2>Статистика и выводы по месяцам</h2><div class="chart-sub">Детальные выводы показываются по месяцам, выбранным в верхнем фильтре.</div></div></div>
-      
-      <div class="month-panel" data-panel="dec25" data-year="2025" role="tabpanel">
-        <div class="panel-head">
-          <div><h3>Декабрь 2025</h3><div class="panel-period">01.12.2025 - 31.12.2025</div></div>
-          <span class="trend neutral">Старт</span>
-        </div>
-        <div class="panel-body">
+    <section class="chart-card month-explorer" aria-label="?????????? ?? ???????">
+      <div class="chart-head"><div><h2>?????????? ? ?????? ?? ???????</h2><div class="chart-sub">????????? ?????? ???????????? ?? ???????, ????????? ? ??????? ???????.</div></div></div>
+      <div class="month-panels" id="monthPanels">
+        <article class="month-panel" data-panel="jan25">
+          <div class="panel-head">
+            <div><h3>Январь 2025</h3><div class="panel-period">01.01.2025 - 31.01.2025</div></div>
+            <span class="trend neutral">Старт</span>
+          </div>
           <div class="mini-stats">
-            <div class="mini-stat"><span>Показы</span><strong>186 724</strong></div>
-            <div class="mini-stat"><span>Клики</span><strong>2 461</strong></div>
-            <div class="mini-stat"><span>Расход</span><strong>99 470,86 ₽</strong></div>
-            <div class="mini-stat conversion"><span>Конверсия</span><strong>20</strong></div>
-            <div class="mini-stat"><span>CPC</span><strong>40,42 ₽</strong></div>
-            <div class="mini-stat"><span>CTR</span><strong>1,32%</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>293 589</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>33 651</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>93 779,98 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>3</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>31 259,99 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>11,46%</strong></div>
           </div>
           <div class="month-comment">
-            <h4>Вывод</h4>
-            <p>Базовый месяц для сравнения: фиксируем стартовые показатели по лидам и CPA. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 1268.80 руб. Проверить кампании: высокий CPA: Конкуренты ГАК РСЯ; без лидов: ГАК РСЯ, gac-nv.ru от 05.11.25, Конкуренты ГАК поиск.</p>
+            <h4>?????</h4>
+            <p>Зафиксировано 3 лида при CPA 31 259,99 ₽. Лучший фокус для масштабирования - Белджи Нижневартовск поиск. с CPA 23 480,24 ₽.</p>
             <div class="campaign-list">
               <table class="campaign-table">
-                <thead><tr><th>Кампания</th><th>Показы</th><th>Клики</th><th>Лиды</th><th>Расход</th><th>CPA</th></tr></thead>
-                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-impressions">3 157</td><td class="campaign-clicks">393</td><td class="campaign-leads">10 лидов</td><td class="campaign-spend">69 896,30 ₽</td><td class="campaign-cpa"><span>CPA</span>6 989,63 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-impressions">418</td><td class="campaign-clicks">2</td><td class="campaign-leads">0 лидов</td><td class="campaign-spend">25,50 ₽</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">gac-nv.ru от 05.11.25</td><td class="campaign-impressions">5 120</td><td class="campaign-clicks">28</td><td class="campaign-leads">0 лидов</td><td class="campaign-spend">0,00 ₽</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-impressions">25 239</td><td class="campaign-clicks">489</td><td class="campaign-leads">9 лидов</td><td class="campaign-spend">11 419,20 ₽</td><td class="campaign-cpa"><span>CPA</span>1 268,80 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК поиск</td><td class="campaign-impressions">1</td><td class="campaign-clicks">0</td><td class="campaign-leads">0 лидов</td><td class="campaign-spend">0,00 ₽</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-impressions">152 789</td><td class="campaign-clicks">1 549</td><td class="campaign-leads">1 лид</td><td class="campaign-spend">18 129,85 ₽</td><td class="campaign-cpa"><span>CPA</span>18 129,85 ₽</td></tr></tbody>
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">Белджи Нижневартовск поиск.</td><td class="campaign-impressions">9 145</td><td class="campaign-clicks">344</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">46 960,47 ?</td><td class="campaign-cpa"><span>CPA</span>23 480,24 ?</td></tr><tr><td class="campaign-name">Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">116 077</td><td class="campaign-clicks">17 185</td><td class="campaign-leads">1 ???</td><td class="campaign-spend">20 775,77 ?</td><td class="campaign-cpa"><span>CPA</span>20 775,77 ?</td></tr><tr><td class="campaign-name">Конкуренты Белджи Нижневартовск РСЯ</td><td class="campaign-impressions">138 048</td><td class="campaign-clicks">15 476</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">17 941,12 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr><tr><td class="campaign-name">Конкуренты Белджи Нижневартовск поиск</td><td class="campaign-impressions">3 288</td><td class="campaign-clicks">72</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">8 102,62 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr></tbody>
               </table>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="month-panel" data-panel="jan26" data-year="2026" role="tabpanel">
-        <div class="panel-head">
-          <div><h3>Январь 2026</h3><div class="panel-period">01.01.2026 - 31.01.2026</div></div>
-          <span class="trend bad">+10,4% CPA</span>
-        </div>
-        <div class="panel-body">
+        </article>
+        <article class="month-panel" data-panel="feb25">
+          <div class="panel-head">
+            <div><h3>Февраль 2025</h3><div class="panel-period">01.02.2025 - 28.02.2025</div></div>
+            <span class="trend good">-21,4% CPA</span>
+          </div>
           <div class="mini-stats">
-            <div class="mini-stat"><span>Показы</span><strong>109 657</strong></div>
-            <div class="mini-stat"><span>Клики</span><strong>1 719</strong></div>
-            <div class="mini-stat"><span>Расход</span><strong>60 384,37 ₽</strong></div>
-            <div class="mini-stat conversion"><span>Конверсия</span><strong>11</strong></div>
-            <div class="mini-stat"><span>CPC</span><strong>35,13 ₽</strong></div>
-            <div class="mini-stat"><span>CTR</span><strong>1,57%</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>258 195</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>9 403</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>98 314,48 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>4</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>24 578,62 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>3,64%</strong></div>
           </div>
           <div class="month-comment">
-            <h4>Вывод</h4>
-            <p>К предыдущему месяцу: лиды -45%, CPA +10%. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 2217.15 руб. Проверить кампании: без лидов: Конкуренты ГАК РСЯ.</p>
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 24 578,62 ₽ при 4 лида. Лучший фокус для масштабирования - Белджи Нижневартовск РСЯ. с CPA 4 527,94 ₽.</p>
             <div class="campaign-list">
               <table class="campaign-table">
-                <thead><tr><th>Кампания</th><th>Показы</th><th>Клики</th><th>Лиды</th><th>Расход</th><th>CPA</th></tr></thead>
-                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-impressions">2 860</td><td class="campaign-clicks">296</td><td class="campaign-leads">5 лидов</td><td class="campaign-spend">35 297,40 ₽</td><td class="campaign-cpa"><span>CPA</span>7 059,48 ₽</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-impressions">19 344</td><td class="campaign-clicks">445</td><td class="campaign-leads">6 лидов</td><td class="campaign-spend">13 302,88 ₽</td><td class="campaign-cpa"><span>CPA</span>2 217,15 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-impressions">87 453</td><td class="campaign-clicks">978</td><td class="campaign-leads">0 лидов</td><td class="campaign-spend">11 784,09 ₽</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr></tbody>
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">55 742</td><td class="campaign-clicks">733</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">9 055,87 ?</td><td class="campaign-cpa"><span>CPA</span>4 527,94 ?</td></tr><tr><td class="campaign-name">Новый сайт belgeenv.ru от 21.02.25</td><td class="campaign-impressions">5 729</td><td class="campaign-clicks">1 228</td><td class="campaign-leads">1 ???</td><td class="campaign-spend">2 400,00 ?</td><td class="campaign-cpa"><span>CPA</span>2 400,00 ?</td></tr><tr><td class="campaign-name">Белджи Нижневартовск поиск.</td><td class="campaign-impressions">5 537</td><td class="campaign-clicks">258</td><td class="campaign-leads">1 ???</td><td class="campaign-spend">43 819,03 ?</td><td class="campaign-cpa"><span>CPA</span>43 819,03 ?</td></tr><tr><td class="campaign-name">Конкуренты Белджи Нижневартовск поиск</td><td class="campaign-impressions">8 296</td><td class="campaign-clicks">202</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">28 016,93 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr></tbody>
               </table>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="month-panel" data-panel="feb26" data-year="2026" role="tabpanel">
-        <div class="panel-head">
-          <div><h3>Февраль 2026</h3><div class="panel-period">01.02.2026 - 28.02.2026</div></div>
-          <span class="trend bad">+2,8% CPA</span>
-        </div>
-        <div class="panel-body">
+        </article>
+        <article class="month-panel" data-panel="mar25">
+          <div class="panel-head">
+            <div><h3>Март 2025</h3><div class="panel-period">01.03.2025 - 31.03.2025</div></div>
+            <span class="trend good">-68,0% CPA</span>
+          </div>
           <div class="mini-stats">
-            <div class="mini-stat"><span>Показы</span><strong>227 514</strong></div>
-            <div class="mini-stat"><span>Клики</span><strong>3 179</strong></div>
-            <div class="mini-stat"><span>Расход</span><strong>101 529,40 ₽</strong></div>
-            <div class="mini-stat conversion"><span>Конверсия</span><strong>18</strong></div>
-            <div class="mini-stat"><span>CPC</span><strong>31,94 ₽</strong></div>
-            <div class="mini-stat"><span>CTR</span><strong>1,40%</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>238 479</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>5 851</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>110 184,73 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>14</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>7 870,34 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>2,45%</strong></div>
           </div>
           <div class="month-comment">
-            <h4>Вывод</h4>
-            <p>К предыдущему месяцу: лиды +64%, CPA +3%. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 2928.00 руб. Проверить кампании: высокий CPA: ГАК поиск, Конкуренты ГАК РСЯ; без лидов: ГАК РСЯ.</p>
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 7 870,34 ₽ при 14 лидов. Лучший фокус для масштабирования - Белджи Нижневартовск поиск. с CPA 11 014,55 ₽.</p>
             <div class="campaign-list">
               <table class="campaign-table">
-                <thead><tr><th>Кампания</th><th>Показы</th><th>Клики</th><th>Лиды</th><th>Расход</th><th>CPA</th></tr></thead>
-                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-impressions">2 224</td><td class="campaign-clicks">210</td><td class="campaign-leads">2 лида</td><td class="campaign-spend">28 923,85 ₽</td><td class="campaign-cpa"><span>CPA</span>14 461,92 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-impressions">100 830</td><td class="campaign-clicks">876</td><td class="campaign-leads">0 лидов</td><td class="campaign-spend">13 862,32 ₽</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-impressions">49 565</td><td class="campaign-clicks">1 083</td><td class="campaign-leads">15 лидов</td><td class="campaign-spend">43 920,00 ₽</td><td class="campaign-cpa"><span>CPA</span>2 928,00 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-impressions">74 895</td><td class="campaign-clicks">1 010</td><td class="campaign-leads">1 лид</td><td class="campaign-spend">14 823,23 ₽</td><td class="campaign-cpa"><span>CPA</span>14 823,23 ₽</td></tr></tbody>
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">Белджи Нижневартовск поиск.</td><td class="campaign-impressions">2 630</td><td class="campaign-clicks">194</td><td class="campaign-leads">5 ?????</td><td class="campaign-spend">55 072,74 ?</td><td class="campaign-cpa"><span>CPA</span>11 014,55 ?</td></tr><tr><td class="campaign-name">NEW Конкуренты Белджи Нижневартовск РСЯ</td><td class="campaign-impressions">125 939</td><td class="campaign-clicks">2 730</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">15 736,73 ?</td><td class="campaign-cpa"><span>CPA</span>5 245,58 ?</td></tr><tr><td class="campaign-name">Конкуренты Белджи Нижневартовск поиск</td><td class="campaign-impressions">4 766</td><td class="campaign-clicks">121</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">33 071,82 ?</td><td class="campaign-cpa"><span>CPA</span>11 023,94 ?</td></tr><tr><td class="campaign-name">NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">53 569</td><td class="campaign-clicks">1 233</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">6 303,44 ?</td><td class="campaign-cpa"><span>CPA</span>3 151,72 ?</td></tr></tbody>
               </table>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="month-panel" data-panel="mar26" data-year="2026" role="tabpanel">
-        <div class="panel-head">
-          <div><h3>Март 2026</h3><div class="panel-period">01.03.2026 - 31.03.2026</div></div>
-          <span class="trend bad">+42,9% CPA</span>
-        </div>
-        <div class="panel-body">
+        </article>
+        <article class="month-panel" data-panel="apr25">
+          <div class="panel-head">
+            <div><h3>Апрель 2025</h3><div class="panel-period">01.04.2025 - 30.04.2025</div></div>
+            <span class="trend bad">+119,3% CPA</span>
+          </div>
           <div class="mini-stats">
-            <div class="mini-stat"><span>Показы</span><strong>280 053</strong></div>
-            <div class="mini-stat"><span>Клики</span><strong>4 945</strong></div>
-            <div class="mini-stat"><span>Расход</span><strong>104 769,55 ₽</strong></div>
-            <div class="mini-stat conversion"><span>Конверсия</span><strong>13</strong></div>
-            <div class="mini-stat"><span>CPC</span><strong>21,19 ₽</strong></div>
-            <div class="mini-stat"><span>CTR</span><strong>1,77%</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>934 909</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>29 173</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>224 337,84 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>13</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>17 256,76 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>3,12%</strong></div>
           </div>
           <div class="month-comment">
-            <h4>Вывод</h4>
-            <p>К предыдущему месяцу: лиды -28%, CPA +43%. Лучший CPA у кампании &quot;Товарная кампания gac-nv.ru от 05.11.25&quot; - 3456.67 руб. Проверить кампании: высокий CPA: ГАК поиск; без лидов: ГАК РСЯ.</p>
+            <h4>?????</h4>
+            <p>CPA выросла до 17 256,76 ₽ при 13 лидов; нужно проверить дорогие кампании и площадки. Лучший фокус для масштабирования - NEW Конкуренты Белджи Нижневартовск РСЯ с CPA 9 763,46 ₽.</p>
             <div class="campaign-list">
               <table class="campaign-table">
-                <thead><tr><th>Кампания</th><th>Показы</th><th>Клики</th><th>Лиды</th><th>Расход</th><th>CPA</th></tr></thead>
-                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-impressions">2 349</td><td class="campaign-clicks">242</td><td class="campaign-leads">1 лид</td><td class="campaign-spend">43 778,15 ₽</td><td class="campaign-cpa"><span>CPA</span>43 778,15 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-impressions">90 384</td><td class="campaign-clicks">638</td><td class="campaign-leads">0 лидов</td><td class="campaign-spend">19 511,40 ₽</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-impressions">187 320</td><td class="campaign-clicks">4 065</td><td class="campaign-leads">12 лидов</td><td class="campaign-spend">41 480,00 ₽</td><td class="campaign-cpa"><span>CPA</span>3 456,67 ₽</td></tr></tbody>
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">NEW Конкуренты Белджи Нижневартовск РСЯ</td><td class="campaign-impressions">583 734</td><td class="campaign-clicks">7 325</td><td class="campaign-leads">4 ????</td><td class="campaign-spend">39 053,85 ?</td><td class="campaign-cpa"><span>CPA</span>9 763,46 ?</td></tr><tr><td class="campaign-name">Новый сайт belgeenv.ru от 21.02.25</td><td class="campaign-impressions">117 000</td><td class="campaign-clicks">17 359</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">33 539,15 ?</td><td class="campaign-cpa"><span>CPA</span>11 179,72 ?</td></tr><tr><td class="campaign-name">NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">215 652</td><td class="campaign-clicks">3 828</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">19 909,06 ?</td><td class="campaign-cpa"><span>CPA</span>9 954,53 ?</td></tr><tr><td class="campaign-name">Конкуренты Белджи Нижневартовск поиск</td><td class="campaign-impressions">6 581</td><td class="campaign-clicks">188</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">68 134,10 ?</td><td class="campaign-cpa"><span>CPA</span>34 067,05 ?</td></tr></tbody>
               </table>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="month-panel" data-panel="apr26" data-year="2026" role="tabpanel">
-        <div class="panel-head">
-          <div><h3>Апрель 2026</h3><div class="panel-period">01.04.2026 - 30.04.2026</div></div>
-          <span class="trend good">-37,5% CPA</span>
-        </div>
-        <div class="panel-body">
+        </article>
+        <article class="month-panel" data-panel="may25">
+          <div class="panel-head">
+            <div><h3>Май 2025</h3><div class="panel-period">01.05.2025 - 31.05.2025</div></div>
+            <span class="trend good">-48,1% CPA</span>
+          </div>
           <div class="mini-stats">
-            <div class="mini-stat"><span>Показы</span><strong>222 511</strong></div>
-            <div class="mini-stat"><span>Клики</span><strong>5 622</strong></div>
-            <div class="mini-stat"><span>Расход</span><strong>80 593,49 ₽</strong></div>
-            <div class="mini-stat conversion"><span>Конверсия</span><strong>16</strong></div>
-            <div class="mini-stat"><span>CPC</span><strong>14,34 ₽</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>417 649</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>4 647</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>80 662,66 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>9</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>8 962,52 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,11%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 8 962,52 ₽ при 9 лидов. Лучший фокус для масштабирования - NEW сайт belgeenv.ru от 29.04.25 с CPA 3 400,00 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">NEW сайт belgeenv.ru от 29.04.25</td><td class="campaign-impressions">18 903</td><td class="campaign-clicks">536</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">10 200,00 ?</td><td class="campaign-cpa"><span>CPA</span>3 400,00 ?</td></tr><tr><td class="campaign-name">NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">188 835</td><td class="campaign-clicks">1 850</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">18 480,05 ?</td><td class="campaign-cpa"><span>CPA</span>9 240,03 ?</td></tr><tr><td class="campaign-name">NEW Конкуренты Белджи Нижневартовск РСЯ</td><td class="campaign-impressions">207 784</td><td class="campaign-clicks">2 171</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">28 183,17 ?</td><td class="campaign-cpa"><span>CPA</span>14 091,59 ?</td></tr><tr><td class="campaign-name">Конкуренты Белджи Нижневартовск поиск</td><td class="campaign-impressions">1 319</td><td class="campaign-clicks">29</td><td class="campaign-leads">1 ???</td><td class="campaign-spend">10 590,50 ?</td><td class="campaign-cpa"><span>CPA</span>10 590,50 ?</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="jun25">
+          <div class="panel-head">
+            <div><h3>Июнь 2025</h3><div class="panel-period">01.06.2025 - 30.06.2025</div></div>
+            <span class="trend bad">+19,9% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>453 476</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>5 374</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>85 962,69 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>8</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>10 745,34 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,19%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>CPA выросла до 10 745,34 ₽ при 8 лидов; нужно проверить дорогие кампании и площадки. Лучший фокус для масштабирования - NEW сайт belgeenv.ru от 29.04.25 с CPA 3 600,00 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">NEW сайт belgeenv.ru от 29.04.25</td><td class="campaign-impressions">25 764</td><td class="campaign-clicks">770</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">10 800,00 ?</td><td class="campaign-cpa"><span>CPA</span>3 600,00 ?</td></tr><tr><td class="campaign-name">Белджи Нижневартовск поиск.</td><td class="campaign-impressions">2 459</td><td class="campaign-clicks">261</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">28 892,84 ?</td><td class="campaign-cpa"><span>CPA</span>9 630,95 ?</td></tr><tr><td class="campaign-name">NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">369 302</td><td class="campaign-clicks">3 699</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">38 239,95 ?</td><td class="campaign-cpa"><span>CPA</span>19 119,97 ?</td></tr><tr><td class="campaign-name">NEW Конкуренты Белджи Нижневартовск РСЯ</td><td class="campaign-impressions">55 951</td><td class="campaign-clicks">644</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">8 029,91 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="jul25">
+          <div class="panel-head">
+            <div><h3>Июль 2025</h3><div class="panel-period">01.07.2025 - 31.07.2025</div></div>
+            <span class="trend bad">+93,3% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>450 878</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>6 525</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>103 875,77 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>5</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>20 775,15 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,45%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>CPA выросла до 20 775,15 ₽ при 5 лидов; нужно проверить дорогие кампании и площадки. Лучший фокус для масштабирования - 2.0 NEW Конкуренты Белджи Нижневартовск РСЯ с CPA 9 570,16 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 NEW Конкуренты Белджи Нижневартовск РСЯ</td><td class="campaign-impressions">166 042</td><td class="campaign-clicks">2 853</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">28 710,49 ?</td><td class="campaign-cpa"><span>CPA</span>9 570,16 ?</td></tr><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">2 665</td><td class="campaign-clicks">217</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">18 007,48 ?</td><td class="campaign-cpa"><span>CPA</span>9 003,74 ?</td></tr><tr><td class="campaign-name">2.0 NEW сайт belgeenv.ru</td><td class="campaign-impressions">16 356</td><td class="campaign-clicks">339</td><td class="campaign-leads">1 ???</td><td class="campaign-spend">14 400,00 ?</td><td class="campaign-cpa"><span>CPA</span>14 400,00 ?</td></tr><tr><td class="campaign-name">Белджи Нижневартовск поиск.</td><td class="campaign-impressions">1 310</td><td class="campaign-clicks">123</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">18 043,27 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="aug25">
+          <div class="panel-head">
+            <div><h3>Август 2025</h3><div class="panel-period">01.08.2025 - 31.08.2025</div></div>
+            <span class="trend bad">+21,1% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>475 312</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>9 925</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>100 662,83 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>4</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>25 165,71 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>2,09%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>CPA выросла до 25 165,71 ₽ при 4 лида; нужно проверить дорогие кампании и площадки. Лучший фокус для масштабирования - 2.0 Белджи Нижневартовск поиск. с CPA 18 273,43 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">3 721</td><td class="campaign-clicks">384</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">54 820,30 ?</td><td class="campaign-cpa"><span>CPA</span>18 273,43 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">129 524</td><td class="campaign-clicks">4 333</td><td class="campaign-leads">1 ???</td><td class="campaign-spend">20 654,79 ?</td><td class="campaign-cpa"><span>CPA</span>20 654,79 ?</td></tr><tr><td class="campaign-name">2.0 NEW Конкуренты Белджи Нижневартовск РСЯ</td><td class="campaign-impressions">337 500</td><td class="campaign-clicks">4 978</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">25 187,74 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr><tr><td class="campaign-name">2.0 NEW сайт belgeenv.ru</td><td class="campaign-impressions">3 201</td><td class="campaign-clicks">134</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">0,00 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="sep25">
+          <div class="panel-head">
+            <div><h3>Сентябрь 2025</h3><div class="panel-period">01.09.2025 - 30.09.2025</div></div>
+            <span class="trend good">-46,3% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>301 272</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>7 359</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>175 644,07 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>13</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>13 511,08 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>2,44%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 13 511,08 ₽ при 13 лидов. Лучший фокус для масштабирования - 2.0 Белджи Нижневартовск поиск. с CPA 15 694,41 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">3 160</td><td class="campaign-clicks">369</td><td class="campaign-leads">7 ?????</td><td class="campaign-spend">109 860,90 ?</td><td class="campaign-cpa"><span>CPA</span>15 694,41 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">158 804</td><td class="campaign-clicks">4 728</td><td class="campaign-leads">4 ????</td><td class="campaign-spend">19 924,09 ?</td><td class="campaign-cpa"><span>CPA</span>4 981,02 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">90 471</td><td class="campaign-clicks">1 933</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">20 764,10 ?</td><td class="campaign-cpa"><span>CPA</span>10 382,05 ?</td></tr><tr><td class="campaign-name">Реклама в телеграм каналах</td><td class="campaign-impressions">41 102</td><td class="campaign-clicks">79</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">16 800,00 ?</td><td class="campaign-cpa"><span>??????</span>??? ?????</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="oct25">
+          <div class="panel-head">
+            <div><h3>Октябрь 2025</h3><div class="panel-period">01.10.2025 - 31.10.2025</div></div>
+            <span class="trend good">-33,6% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>163 660</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>3 600</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>152 580,80 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>17</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>8 975,34 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>2,20%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 8 975,34 ₽ при 17 лидов. Лучший фокус для масштабирования - 2.0 NEW Белджи города РСЯ. с CPA 4 284,44 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">95 274</td><td class="campaign-clicks">2 169</td><td class="campaign-leads">9 ?????</td><td class="campaign-spend">38 559,92 ?</td><td class="campaign-cpa"><span>CPA</span>4 284,44 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">66 415</td><td class="campaign-clicks">1 100</td><td class="campaign-leads">4 ????</td><td class="campaign-spend">22 658,41 ?</td><td class="campaign-cpa"><span>CPA</span>5 664,60 ?</td></tr><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">1 971</td><td class="campaign-clicks">331</td><td class="campaign-leads">4 ????</td><td class="campaign-spend">91 362,48 ?</td><td class="campaign-cpa"><span>CPA</span>22 840,62 ?</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="nov25">
+          <div class="panel-head">
+            <div><h3>Ноябрь 2025</h3><div class="panel-period">01.11.2025 - 30.11.2025</div></div>
+            <span class="trend good">-26,1% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>155 843</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>6 928</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>139 231,08 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>21</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>6 630,05 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>4,45%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 6 630,05 ₽ при 21 лид. Лучший фокус для масштабирования - 2.0 NEW Белджи города РСЯ. с CPA 2 736,42 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">91 106</td><td class="campaign-clicks">4 660</td><td class="campaign-leads">13 ?????</td><td class="campaign-spend">35 573,45 ?</td><td class="campaign-cpa"><span>CPA</span>2 736,42 ?</td></tr><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">1 634</td><td class="campaign-clicks">250</td><td class="campaign-leads">5 ?????</td><td class="campaign-spend">78 236,80 ?</td><td class="campaign-cpa"><span>CPA</span>15 647,36 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">63 103</td><td class="campaign-clicks">2 018</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">25 420,82 ?</td><td class="campaign-cpa"><span>CPA</span>8 473,61 ?</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="dec25">
+          <div class="panel-head">
+            <div><h3>Декабрь 2025</h3><div class="panel-period">01.12.2025 - 31.12.2025</div></div>
+            <span class="trend good">-12,8% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>146 848</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>6 406</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>104 091,68 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>18</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>5 782,87 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>4,36%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 5 782,87 ₽ при 18 лидов. Лучший фокус для масштабирования - 2.0 NEW Белджи Нижневартовск РСЯ. с CPA 3 645,59 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">71 746</td><td class="campaign-clicks">3 116</td><td class="campaign-leads">6 ?????</td><td class="campaign-spend">21 873,54 ?</td><td class="campaign-cpa"><span>CPA</span>3 645,59 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">73 667</td><td class="campaign-clicks">3 097</td><td class="campaign-leads">6 ?????</td><td class="campaign-spend">25 530,53 ?</td><td class="campaign-cpa"><span>CPA</span>4 255,09 ?</td></tr><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">1 435</td><td class="campaign-clicks">193</td><td class="campaign-leads">6 ?????</td><td class="campaign-spend">56 687,61 ?</td><td class="campaign-cpa"><span>CPA</span>9 447,93 ?</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="jan26">
+          <div class="panel-head">
+            <div><h3>Январь 2026</h3><div class="panel-period">01.01.2026 - 31.01.2026</div></div>
+            <span class="trend bad">+70,8% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>199 733</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>5 058</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>69 157,59 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>7</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>9 879,66 ?</strong></div>
             <div class="mini-stat"><span>CTR</span><strong>2,53%</strong></div>
           </div>
           <div class="month-comment">
-            <h4>Вывод</h4>
-            <p>К предыдущему месяцу: лиды +23%, CPA -37%. Лучший CPA у кампании &quot;ГАК поиск&quot; - 3355.34 руб. Проверить кампании: высокий CPA: ГАК РСЯ; без лидов: gac-nv.ru от 05.11.25.</p>
+            <h4>?????</h4>
+            <p>CPA выросла до 9 879,66 ₽ при 7 лидов; нужно проверить дорогие кампании и площадки. Лучший фокус для масштабирования - 2.0 NEW Белджи города РСЯ. с CPA 3 315,71 ₽.</p>
             <div class="campaign-list">
               <table class="campaign-table">
-                <thead><tr><th>Кампания</th><th>Показы</th><th>Клики</th><th>Лиды</th><th>Расход</th><th>CPA</th></tr></thead>
-                <tbody><tr><td class="campaign-name">ГАК поиск</td><td class="campaign-impressions">2 013</td><td class="campaign-clicks">174</td><td class="campaign-leads">6 лидов</td><td class="campaign-spend">20 132,05 ₽</td><td class="campaign-cpa"><span>CPA</span>3 355,34 ₽</td></tr><tr><td class="campaign-name">ГАК РСЯ</td><td class="campaign-impressions">87 400</td><td class="campaign-clicks">3 014</td><td class="campaign-leads">2 лида</td><td class="campaign-spend">22 973,34 ₽</td><td class="campaign-cpa"><span>CPA</span>11 486,67 ₽</td></tr><tr><td class="campaign-name">gac-nv.ru от 05.11.25</td><td class="campaign-impressions">4 284</td><td class="campaign-clicks">65</td><td class="campaign-leads">0 лидов</td><td class="campaign-spend">0,00 ₽</td><td class="campaign-cpa"><span>Статус</span>без лидов</td></tr><tr><td class="campaign-name">Товарная кампания gac-nv.ru от 05.11.25</td><td class="campaign-impressions">111 245</td><td class="campaign-clicks">1 933</td><td class="campaign-leads">7 лидов</td><td class="campaign-spend">33 602,61 ₽</td><td class="campaign-cpa"><span>CPA</span>4 800,37 ₽</td></tr><tr><td class="campaign-name">Конкуренты ГАК РСЯ</td><td class="campaign-impressions">17 569</td><td class="campaign-clicks">436</td><td class="campaign-leads">1 лид</td><td class="campaign-spend">3 885,50 ₽</td><td class="campaign-cpa"><span>CPA</span>3 885,50 ₽</td></tr></tbody>
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">3 ????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>3 315,71 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>7 694,05 ?</td></tr><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">2 ????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>21 911,19 ?</td></tr></tbody>
               </table>
             </div>
           </div>
-        </div>
+        </article>
+        <article class="month-panel" data-panel="feb26">
+          <div class="panel-head">
+            <div><h3>Февраль 2026</h3><div class="panel-period">01.02.2026 - 28.02.2026</div></div>
+            <span class="trend good">-33,0% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>173 609</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>3 394</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>85 997,97 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>13</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>6 615,23 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>1,95%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 6 615,23 ₽ при 13 лидов. Лучший фокус для масштабирования - 2.0 NEW Белджи города РСЯ. с CPA 2 884,25 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">7 ?????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>2 884,25 ?</td></tr><tr><td class="campaign-name">МК belgee сайт от 09.02.2026</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">4 ????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>3 050,00 ?</td></tr><tr><td class="campaign-name">2.0 Белджи Нижневартовск поиск.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">1 ???</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>31 624,89 ?</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="mar26">
+          <div class="panel-head">
+            <div><h3>Март 2026</h3><div class="panel-period">01.03.2026 - 31.03.2026</div></div>
+            <span class="trend good">-40,6% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>285 508</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>5 837</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>90 363,95 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>23</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>3 928,87 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>2,04%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>Эффективность улучшилась: CPA снизилась до 3 928,87 ₽ при 23 лида. Лучший фокус для масштабирования - 2.0 NEW Белджи города РСЯ. с CPA 3 130,43 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">9 ?????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>3 130,43 ?</td></tr><tr><td class="campaign-name">МК belgee S50 сайт от 09.02.2026</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">5 ?????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>2 135,00 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи Нижневартовск РСЯ.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">5 ?????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>4 993,60 ?</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+        <article class="month-panel" data-panel="apr26">
+          <div class="panel-head">
+            <div><h3>Апрель 2026</h3><div class="panel-period">01.04.2026 - 30.04.2026</div></div>
+            <span class="trend bad">+37,6% CPA</span>
+          </div>
+          <div class="mini-stats">
+            <div class="mini-stat"><span>??????</span><strong>274 862</strong></div>
+            <div class="mini-stat"><span>?????</span><strong>5 621</strong></div>
+            <div class="mini-stat"><span>??????</span><strong>124 305,52 ?</strong></div>
+            <div class="mini-stat conversion"><span>?????????</span><strong>23</strong></div>
+            <div class="mini-stat"><span>CPA</span><strong>5 404,59 ?</strong></div>
+            <div class="mini-stat"><span>CTR</span><strong>2,05%</strong></div>
+          </div>
+          <div class="month-comment">
+            <h4>?????</h4>
+            <p>CPA выросла до 5 404,59 ₽ при 23 лида; нужно проверить дорогие кампании и площадки. Лучший фокус для масштабирования - МК belgee S50 сайт от 09.02.2026 с CPA 4 514,00 ₽.</p>
+            <div class="campaign-list">
+              <table class="campaign-table">
+                <thead><tr><th>????????</th><th>??????</th><th>?????</th><th>????</th><th>??????</th><th>CPA</th></tr></thead>
+                <tbody><tr><td class="campaign-name">МК belgee S50 сайт от 09.02.2026</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">7 ?????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>4 514,00 ?</td></tr><tr><td class="campaign-name">2.0 NEW Белджи города РСЯ.</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">7 ?????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>CPA</span>4 813,04 ?</td></tr><tr><td class="campaign-name">Конкуренты Белджи Нижневартовск поиск</td><td class="campaign-impressions">?</td><td class="campaign-clicks">?</td><td class="campaign-leads">0 ?????</td><td class="campaign-spend">? ?</td><td class="campaign-cpa"><span>??????</span>нужна проверка</td></tr></tbody>
+              </table>
+            </div>
+          </div>
+        </article>
       </div>
     </section>
 
-    <div class="footer-note">Данные подготовлены по отчетам ГАК Нижневартовск за декабрь 2025 и январь-апрель 2026. Формат подходит для размещения на сайте или отправки клиенту как самостоятельный HTML-дашборд.</div>
+    <div class="footer-note">Данные подготовлены по отчетам Белджи Нижневартовск за январь-декабрь 2025 и январь-апрель 2026. Формат подходит для размещения на сайте или отправки клиенту как самостоятельный HTML-дашборд.</div>
   </main>
 
   
@@ -1224,15 +1578,17 @@
     function drawConversionsChart(data = selectedMonths()) { drawChart('#conversionsChart', data, [{ label: 'Конверсии', color: '#129766', value: m => m.conv, format: value => `${fmtInt.format(value)} лидов` }], { axisFormat: value => fmtInt.format(Math.round(value)) }); }
     function drawCpaChart(data = selectedMonths()) { drawChart('#cpaChart', data, [{ label: 'Цена конверсии', color: '#d64545', value: m => m.cpa, format: formatMoney }], { axisFormat: formatMoneyCompact }); }
     function drawQualityChart(data = selectedMonths()) { drawChart('#qualityChart', data, [{ label: 'CTR', color: '#7156c6', value: m => m.ctr, format: formatPercent }, { label: 'CPC', color: '#d99524', value: m => m.cpc, format: formatMoney }], { axisFormat: value => value >= 10 ? `${Math.round(value)}` : value.toFixed(1) }); }
+    
+    function renderSingleMonthOverview(data = selectedMonths()) { const section = document.querySelector('[data-single-month]'); const grid = document.querySelector('[data-single-month-grid]'); const title = document.querySelector('[data-single-month-title]'); const subtitle = document.querySelector('[data-single-month-subtitle]'); const charts = document.querySelector('[data-charts-grid]'); if (!section || !grid || !title || !subtitle || !charts) return; const single = data.length === 1 ? data[0] : null; section.hidden = !single; charts.hidden = !!single; section.style.display = single ? 'block' : 'none'; charts.style.display = single ? 'none' : 'grid'; if (!single) { grid.innerHTML = ''; return; } title.textContent = `${single.name} ${single.year}`; subtitle.textContent = `Фактические показатели за период ${single.period}.`; const metrics = [{ label: 'Показы', value: fmtInt.format(single.impressions), note: 'Охват объявлений' }, { label: 'Клики', value: fmtInt.format(single.clicks), note: 'Переходы по рекламе' }, { label: 'CTR', value: formatPercent(single.ctr), note: 'Клики / показы' }, { label: 'Расход', value: formatMoney(single.spend), note: 'Рекламный бюджет' }, { label: 'CPC', value: formatMoney(single.cpc), note: 'Расход / клики' }, { label: 'Лиды', value: fmtInt.format(single.conv), note: 'Конверсии из рекламы' }, { label: 'CPA', value: formatMoney(single.cpa), note: 'Расход / лиды' }, { label: 'CR в лид', value: formatPercent(single.cr), note: 'Лиды / клики' }]; grid.innerHTML = metrics.map(item => `<article class="single-month-card"><div class="label">${item.label}</div><div class="value">${item.value}</div><div class="note">${item.note}</div></article>`).join(''); }
     function renderTable(data = selectedMonths()) { const rows = document.querySelector('#summaryRows'); rows.innerHTML = data.map((m, i) => { const prev = i === 0 ? null : data[i - 1]; const cpaTrend = !prev ? 'Старт' : m.cpa <= prev.cpa ? 'Улучшение' : 'Просадка'; const trendClass = !prev || m.cpa <= prev.cpa ? 'good-text' : 'bad-text'; return `<tr><td><strong>${m.name} ${m.year}</strong></td><td>${fmtInt.format(m.impressions)}</td><td>${fmtInt.format(m.clicks)}</td><td>${m.ctr.toFixed(2)}</td><td>${money(m.spend)}</td><td>${money(m.cpc)}</td><td class="conversion">${m.conv}</td><td>${money(m.cpa)}</td><td class="${trendClass}">${cpaTrend}</td></tr>`; }).join(''); }
     function setTrend(node, note) { node.textContent = note.text; node.classList.toggle('good', note.className === 'good'); node.classList.toggle('bad', note.className === 'bad'); node.classList.toggle('neutral', note.className === 'neutral'); }
-    function updateKpis(data = selectedMonths()) { const total = aggregate(data); const years = selectedYears(data); const isFullSingleYear = years.length === 1 && data.length === yearMonths(years[0]).length; const periodText = isFullSingleYear ? `Сумма за ${years[0]}` : `Выбрано: ${data.length} мес.`; const notes = { spend: periodText, conv: { text: `Всего лидов: ${total.conv}`, className: 'good' }, cpa: { text: isFullSingleYear ? `CPA за ${years[0]}` : 'CPA по выбранным месяцам', className: total.cpa ? 'good' : 'neutral' }, cpc: { text: isFullSingleYear ? `CPC за ${years[0]}` : 'CPC по выбранным месяцам', className: 'good' } }; document.querySelector('[data-kpi="spend"]').textContent = `${money(total.spend)} ₽`; document.querySelector('[data-kpi="conv"]').textContent = total.conv; document.querySelector('[data-kpi="cpa"]').textContent = `${money(total.cpa)} ₽`; document.querySelector('[data-kpi="cpc"]').textContent = `${money(total.cpc)} ₽`; document.querySelector('[data-kpi-note="spend"]').textContent = notes.spend; setTrend(document.querySelector('[data-kpi-note="conv"]'), notes.conv); setTrend(document.querySelector('[data-kpi-note="cpa"]'), notes.cpa); setTrend(document.querySelector('[data-kpi-note="cpc"]'), notes.cpc); const summary = document.querySelector('[data-selection-summary]'); if (summary) summary.textContent = `Период: ${selectionLabel(data)}. Можно сравнивать месяцы из разных лет.`; }
+    function updateKpis(data = selectedMonths()) { const total = aggregate(data); const years = selectedYears(data); const isFullSingleYear = years.length === 1 && data.length === yearMonths(years[0]).length; const periodText = isFullSingleYear ? `Сумма за ${years[0]}` : `Выбрано: ${data.length} мес.`; const notes = { spend: periodText, conv: { text: `Всего лидов: ${total.conv}`, className: 'good' }, cpa: { text: isFullSingleYear ? `CPA за ${years[0]}` : 'CPA по выбранным месяцам', className: total.cpa ? 'good' : 'neutral' }, cpc: { text: isFullSingleYear ? `CPC за ${years[0]}` : 'CPC по выбранным месяцам', className: 'good' } }; document.querySelector('[data-kpi="spend"]').textContent = `${money(total.spend)} ₽`; document.querySelector('[data-kpi="conv"]').textContent = total.conv; document.querySelector('[data-kpi="cpa"]').textContent = `${money(total.cpa)} ₽`; document.querySelector('[data-kpi="cpc"]').textContent = `${money(total.cpc)} ₽`; document.querySelector('[data-kpi-note="spend"]').textContent = notes.spend; setTrend(document.querySelector('[data-kpi-note="conv"]'), notes.conv); setTrend(document.querySelector('[data-kpi-note="cpa"]'), notes.cpa); setTrend(document.querySelector('[data-kpi-note="cpc"]'), notes.cpc); const summary = document.querySelector('[data-selection-summary]'); if (summary) summary.textContent = `Период: ${selectionLabel(data)}. Обычный клик выбирает один месяц, Ctrl или Shift позволяют сравнивать несколько месяцев.`; }
     function periodChips(data = selectedMonths()) { if (!data.length) return ['Ничего не выбрано']; const years = selectedYears(data); return years.map(year => { const yearData = data.filter(month => month.year === year); if (yearData.length === yearMonths(year).length) return `${year} за год`; if (yearData.length === 1) return `${shortMonth(yearData[0])}`; return `${shortMonth(yearData[0])} - ${shortMonth(yearData[yearData.length - 1])}`; }); }
     function syncButtons() { const data = selectedMonths(); document.querySelectorAll('[data-month]').forEach(input => { const active = selectedKeys.includes(input.dataset.month); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); document.querySelectorAll('[data-range="year"]').forEach(input => { const year = Number(input.dataset.year); const active = fullYearSelected(year); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); const trigger = document.querySelector('[data-period-trigger] strong'); if (trigger) trigger.textContent = selectionLabel(data); const chips = document.querySelector('[data-selected-chips]'); if (chips) chips.innerHTML = periodChips(data).map(label => `<span class="period-chip">${label}</span>`).join(''); }
     function syncPanels() { document.querySelectorAll('.month-panel').forEach(panel => { const active = selectedKeys.includes(panel.dataset.panel); panel.classList.toggle('active', active); }); }
-    function renderDashboard() { const data = selectedMonths(); syncButtons(); syncPanels(); updateKpis(data); drawTrafficVolumeChart(data); drawSpendChart(data); drawConversionsChart(data); drawCpaChart(data); drawQualityChart(data); renderTable(data); }
+    function renderDashboard() { const data = selectedMonths(); syncButtons(); syncPanels(); updateKpis(data); renderSingleMonthOverview(data); if (data.length !== 1) { drawTrafficVolumeChart(data); drawSpendChart(data); drawConversionsChart(data); drawCpaChart(data); drawQualityChart(data); } renderTable(data); }
     function setupCampaignToggles() { document.querySelectorAll('.month-comment').forEach(comment => { const list = comment.querySelector('.campaign-list'); if (!list || comment.querySelector('.campaign-toggle')) return; const button = document.createElement('button'); button.type = 'button'; button.className = 'campaign-toggle'; button.textContent = 'Подробно по кампаниям'; button.addEventListener('click', () => { const open = comment.classList.toggle('campaigns-open'); button.textContent = open ? 'Скрыть кампании' : 'Подробно по кампаниям'; }); comment.insertBefore(button, list); }); }
-    function initMonthExplorer() { setupCampaignToggles(); const menu = document.querySelector('[data-period-menu]'); const trigger = document.querySelector('[data-period-trigger]'); const setMenuOpen = open => { if (!menu || !trigger) return; menu.hidden = !open; trigger.setAttribute('aria-expanded', open ? 'true' : 'false'); }; trigger?.addEventListener('click', event => { event.stopPropagation(); setMenuOpen(menu.hidden); }); document.addEventListener('click', event => { if (!event.target.closest('.period-dropdown')) setMenuOpen(false); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenuOpen(false); }); document.querySelectorAll('[data-clear-period]').forEach(button => { button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); selectedKeys = []; renderDashboard(); }); }); document.querySelectorAll('.period-option').forEach(option => { option.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); const input = option.querySelector('input'); if (!input) return; if (input.dataset.range === 'year') { const year = Number(input.dataset.year); const keys = yearMonths(year).map(month => month.key); const active = fullYearSelected(year); selectedYear = year; selectedKeys = active ? selectedKeys.filter(key => !keys.includes(key)) : [...new Set([...selectedKeys, ...keys])]; } else { const key = input.dataset.month; const month = months.find(item => item.key === key); if (!month) return; const active = selectedKeys.includes(key); selectedYear = month.year; selectedKeys = active ? selectedKeys.filter(item => item !== key) : [...new Set([...selectedKeys, key])]; } renderDashboard(); }); }); renderDashboard(); }
+    function initMonthExplorer() { setupCampaignToggles(); const menu = document.querySelector('[data-period-menu]'); const trigger = document.querySelector('[data-period-trigger]'); const setMenuOpen = open => { if (!menu || !trigger) return; menu.hidden = !open; trigger.setAttribute('aria-expanded', open ? 'true' : 'false'); }; trigger?.addEventListener('click', event => { event.stopPropagation(); setMenuOpen(menu.hidden); }); document.addEventListener('click', event => { if (!event.target.closest('.period-dropdown')) setMenuOpen(false); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenuOpen(false); }); document.querySelectorAll('[data-clear-period]').forEach(button => { button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); selectedKeys = []; renderDashboard(); }); }); document.querySelectorAll('.period-option').forEach(option => { option.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); const input = option.querySelector('input'); if (!input) return; if (input.dataset.range === 'year') { const year = Number(input.dataset.year); const keys = yearMonths(year).map(month => month.key); const active = fullYearSelected(year); selectedYear = year; selectedKeys = active ? selectedKeys.filter(key => !keys.includes(key)) : [...new Set([...selectedKeys, ...keys])]; } else { const key = input.dataset.month; const month = months.find(item => item.key === key); if (!month) return; const active = selectedKeys.includes(key); const additive = event.ctrlKey || event.metaKey || event.shiftKey; selectedYear = month.year; if (additive) { selectedKeys = active ? selectedKeys.filter(item => item !== key) : [...new Set([...selectedKeys, key])]; } else { selectedKeys = active && selectedKeys.length === 1 ? [] : [key]; } } renderDashboard(); }); }); renderDashboard(); }
     initMonthExplorer();
   </script>
 
