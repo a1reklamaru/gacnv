@@ -1009,6 +1009,14 @@
     .single-month-card .label { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
     .single-month-card .value { margin-top: 5px; font-size: 23px; line-height: 1.08; font-weight: 800; white-space: nowrap; }
     .single-month-card .note { margin-top: 7px; color: var(--muted); font-size: 11px; line-height: 1.25; }
+    .mobile-period-picker,
+    .mobile-chart-nav { display: none; }
+    .mobile-period-picker { margin-top: 8px; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .mobile-period-picker label { display: grid; gap: 4px; font-size: 11px; font-weight: 700; color: var(--muted); }
+    .mobile-period-picker select { width: 100%; min-height: 40px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: #ffffff; color: var(--ink); font: inherit; }
+    .mobile-chart-nav { margin: 0 0 10px; gap: 6px; flex-wrap: wrap; }
+    .mobile-chart-btn { padding: 6px 9px; border: 1px solid #c8d7eb; border-radius: 999px; background: #ffffff; color: var(--muted); font: inherit; font-size: 11px; font-weight: 700; }
+    .mobile-chart-btn.active { border-color: #8fb3f2; background: #eef4ff; color: var(--blue); }
     .chart-card { position: relative; padding: 10px; overflow: visible; border-radius: 8px; }
     .chart-head { gap: 8px; margin-bottom: 7px; }
     .legend { gap: 7px; font-size: 11px; }
@@ -1050,10 +1058,40 @@
       .wrap { width: min(100% - 16px, 1320px); }
       h1 { font-size: 19px; }
       .agency img { width: 178px; }
+      .period-filter { display: none; }
+      .mobile-period-picker { display: grid; }
+      .mobile-chart-nav { display: flex; }
       .charts-grid { grid-template-columns: 1fr; }
+      .charts-grid .chart-card { display: none; }
+      .charts-grid .chart-card.mobile-active { display: block; }
       .kpis, .mini-stats, .single-month-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .period-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .card .value { font-size: 20px; }
+      .month-explorer { padding: 8px; }
+      .month-panel { border-radius: 10px; }
+      .panel-head { flex-direction: column; align-items: flex-start; padding: 8px; gap: 6px; }
+      .panel-head .trend { margin-top: 0; align-self: flex-start; }
+      .panel-body { gap: 6px; }
+      .mini-stats, .month-comment { padding: 6px; }
+      .mini-stat { min-height: 42px; }
+      .mini-stat strong { font-size: 12px; }
+      .campaign-toggle { width: 100%; justify-content: center; }
+      .campaign-list { margin-top: 4px; overflow: hidden; }
+      .campaign-table { min-width: 0; width: 100%; table-layout: fixed; }
+      .campaign-table th, .campaign-table td { padding: 4px 5px; font-size: 10px; }
+      .campaign-table th:nth-child(2),
+      .campaign-table td:nth-child(2),
+      .campaign-table th:nth-child(3),
+      .campaign-table td:nth-child(3),
+      .campaign-table th:nth-child(5),
+      .campaign-table td:nth-child(5) { display: none; }
+      .campaign-table th:nth-child(1),
+      .campaign-table td:nth-child(1) { width: 54%; text-align: left; }
+      .campaign-table th:nth-child(4),
+      .campaign-table td:nth-child(4),
+      .campaign-table th:nth-child(6),
+      .campaign-table td:nth-child(6) { width: 23%; }
+      .campaign-name { word-break: break-word; }
     }
 
   </style>
@@ -1118,6 +1156,19 @@
           <button class="period-clear" type="button" data-clear-period>Без выбора</button>
         </div>
       </div>
+      <div class="mobile-period-picker" aria-label="Быстрый выбор месяца на телефоне">
+        <label>Год
+          <select data-mobile-year>
+            <option value="2025">2025</option>
+            <option value="2026" selected>2026</option>
+          </select>
+        </label>
+        <label>Месяц
+          <select data-mobile-month>
+            <option value="">Все месяцы года</option>
+          </select>
+        </label>
+      </div>
     </section>
 
     <section class="kpis" aria-label="Главные показатели">
@@ -1138,12 +1189,19 @@
       <div class="single-month-grid" data-single-month-grid></div>
     </section>
 
+    <div class="mobile-chart-nav" data-mobile-chart-nav aria-label="Переключение графиков на телефоне">
+      <button type="button" class="mobile-chart-btn active" data-chart-target="traffic">Показы</button>
+      <button type="button" class="mobile-chart-btn" data-chart-target="spend">Расход</button>
+      <button type="button" class="mobile-chart-btn" data-chart-target="conv">Лиды</button>
+      <button type="button" class="mobile-chart-btn" data-chart-target="cpa">CPA</button>
+      <button type="button" class="mobile-chart-btn" data-chart-target="quality">CTR/CPC</button>
+    </div>
     <section class="charts-grid" data-charts-grid aria-label="Графики эффективности">
-      <article class="chart-card"><div class="chart-head"><div><h2>Показы и клики</h2><div class="chart-sub">Динамика объема трафика по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--blue)"></i>Показы</span><span><i style="background: var(--teal)"></i>Клики</span></div></div><svg id="trafficVolumeChart" class="chart" role="img" aria-label="Динамика показов и кликов"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card"><div class="chart-head"><div><h2>Расход</h2><div class="chart-sub">Динамика рекламного бюджета.</div></div><div class="legend"><span><i style="background: var(--amber)"></i>Расход</span></div></div><svg id="spendChart" class="chart" role="img" aria-label="Расход"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card"><div class="chart-head"><div><h2>Конверсии</h2><div class="chart-sub">Количество лидов по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--green)"></i>Конверсии</span></div></div><svg id="conversionsChart" class="chart" role="img" aria-label="Конверсии"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card"><div class="chart-head"><div><h2>Цена конверсии</h2><div class="chart-sub">CPA по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--red)"></i>CPA</span></div></div><svg id="cpaChart" class="chart" role="img" aria-label="Цена конверсии"></svg><div class="chart-tooltip" hidden></div></article>
-      <article class="chart-card"><div class="chart-head"><div><h2>CTR и CPC</h2><div class="chart-sub">Качество и стоимость трафика.</div></div><div class="legend"><span><i style="background: var(--violet)"></i>CTR</span><span><i style="background: var(--amber)"></i>CPC</span></div></div><svg id="qualityChart" class="chart" role="img" aria-label="CTR и CPC"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card mobile-active" data-chart-card="traffic"><div class="chart-head"><div><h2>Показы и клики</h2><div class="chart-sub">Динамика объема трафика по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--blue)"></i>Показы</span><span><i style="background: var(--teal)"></i>Клики</span></div></div><svg id="trafficVolumeChart" class="chart" role="img" aria-label="Динамика показов и кликов"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card" data-chart-card="spend"><div class="chart-head"><div><h2>Расход</h2><div class="chart-sub">Динамика рекламного бюджета.</div></div><div class="legend"><span><i style="background: var(--amber)"></i>Расход</span></div></div><svg id="spendChart" class="chart" role="img" aria-label="Расход"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card" data-chart-card="conv"><div class="chart-head"><div><h2>Конверсии</h2><div class="chart-sub">Количество лидов по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--green)"></i>Конверсии</span></div></div><svg id="conversionsChart" class="chart" role="img" aria-label="Конверсии"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card" data-chart-card="cpa"><div class="chart-head"><div><h2>Цена конверсии</h2><div class="chart-sub">CPA по выбранным месяцам.</div></div><div class="legend"><span><i style="background: var(--red)"></i>CPA</span></div></div><svg id="cpaChart" class="chart" role="img" aria-label="Цена конверсии"></svg><div class="chart-tooltip" hidden></div></article>
+      <article class="chart-card" data-chart-card="quality"><div class="chart-head"><div><h2>CTR и CPC</h2><div class="chart-sub">Качество и стоимость трафика.</div></div><div class="legend"><span><i style="background: var(--violet)"></i>CTR</span><span><i style="background: var(--amber)"></i>CPC</span></div></div><svg id="qualityChart" class="chart" role="img" aria-label="CTR и CPC"></svg><div class="chart-tooltip" hidden></div></article>
     </section>
 
     <section class="table-card">
@@ -1588,10 +1646,13 @@
     function leadWord(value) { const abs = Math.abs(Number(value)) || 0; const mod10 = abs % 10; const mod100 = abs % 100; if (mod10 === 1 && mod100 !== 11) return 'лид'; if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) return 'лида'; return 'лидов'; }
     function renderMonthExplorer(data = selectedMonths()) { const explorer = document.querySelector('.month-explorer'); if (!explorer) return; if (!data.length) { explorer.innerHTML = `<div class="chart-head"><div><h2>Статистика по месяцам</h2><div class="chart-sub">Выберите один или несколько месяцев в верхнем фильтре.</div></div></div>`; return; } explorer.innerHTML = `<div class="chart-head"><div><h2>Статистика по месяцам</h2><div class="chart-sub">Компактная сводка по выбранным месяцам.</div></div></div>${data.map(month => `<div class="month-panel active" data-panel="${month.key}" data-year="${month.year}" role="tabpanel"><div class="panel-head"><div><h3>${month.name} ${month.year}</h3><div class="panel-period">${month.period}</div></div><span class="trend ${month.trendClass}">${month.trendLabel}</span></div><div class="panel-body"><div class="mini-stats"><div class="mini-stat"><span>Показы</span><strong>${fmtInt.format(month.impressions)}</strong></div><div class="mini-stat"><span>Клики</span><strong>${fmtInt.format(month.clicks)}</strong></div><div class="mini-stat"><span>Расход</span><strong>${formatMoney(month.spend)}</strong></div><div class="mini-stat conversion"><span>Конверсия</span><strong>${fmtInt.format(month.conv)}</strong></div><div class="mini-stat"><span>CPC</span><strong>${formatMoney(month.cpc)}</strong></div><div class="mini-stat"><span>CTR</span><strong>${formatPercent(month.ctr)}</strong></div></div><div class="month-comment"><div class="campaign-list"><table class="campaign-table"><thead><tr><th>Кампания</th><th>Показы</th><th>Клики</th><th>Лиды</th><th>Расход</th><th>CPA</th></tr></thead><tbody>${(month.campaigns || []).map(campaign => `<tr><td class="campaign-name">${campaign.name}</td><td class="campaign-impressions">${campaign.impressions ? fmtInt.format(campaign.impressions) : '0'}</td><td class="campaign-clicks">${campaign.clicks ? fmtInt.format(campaign.clicks) : '0'}</td><td class="campaign-leads">${fmtInt.format(campaign.conv || 0)} ${leadWord(campaign.conv || 0)}</td><td class="campaign-spend">${formatMoney(campaign.spend || 0)}</td><td class="campaign-cpa"><span>${campaign.conv ? 'CPA' : 'Статус'}</span>${campaign.conv ? formatMoney(campaign.cpa || 0) : 'без лидов'}</td></tr>`).join('')}</tbody></table></div></div></div></div>`).join('')}`; setupCampaignToggles(); }
     function syncButtons() { const data = selectedMonths(); document.querySelectorAll('[data-month]').forEach(input => { const active = selectedKeys.includes(input.dataset.month); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); document.querySelectorAll('[data-range="year"]').forEach(input => { const year = Number(input.dataset.year); const active = fullYearSelected(year); input.checked = active; input.closest('.period-option')?.classList.toggle('active', active); }); const trigger = document.querySelector('[data-period-trigger] strong'); if (trigger) trigger.textContent = selectionLabel(data); const chips = document.querySelector('[data-selected-chips]'); if (chips) chips.innerHTML = periodChips(data).map(label => `<span class="period-chip">${label}</span>`).join(''); }
+    function syncMobilePeriodPicker() { const yearSelect = document.querySelector('[data-mobile-year]'); const monthSelect = document.querySelector('[data-mobile-month]'); if (!yearSelect || !monthSelect) return; const data = selectedMonths(); const currentYear = data.length === 1 ? data[0].year : selectedYear; yearSelect.value = String(currentYear); const monthsForYear = yearMonths(currentYear); const sameYearData = data.filter(month => month.year === currentYear); const isFullYear = sameYearData.length === monthsForYear.length && sameYearData.length > 0 && data.length === sameYearData.length; const isSingleMonth = data.length === 1 && data[0].year === currentYear; const isCustom = data.length > 1 && !isFullYear; const options = [`<option value="">Все месяцы ${currentYear}</option>`]; if (isCustom) options.push('<option value="__custom__">Несколько месяцев</option>'); options.push(...monthsForYear.map(month => `<option value="${month.key}">${month.name} ${month.year}</option>`)); monthSelect.innerHTML = options.join(''); monthSelect.value = isSingleMonth ? data[0].key : isCustom ? '__custom__' : ''; }
+    function setMobileChart(activeKey = 'traffic') { const cards = document.querySelectorAll('[data-chart-card]'); const buttons = document.querySelectorAll('.mobile-chart-btn'); cards.forEach(card => card.classList.toggle('mobile-active', card.dataset.chartCard === activeKey)); buttons.forEach(button => button.classList.toggle('active', button.dataset.chartTarget === activeKey)); }
     function syncPanels() { document.querySelectorAll('.month-panel').forEach(panel => { const active = selectedKeys.includes(panel.dataset.panel); panel.classList.toggle('active', active); }); }
-    function renderDashboard() { const data = selectedMonths(); syncButtons(); updateKpis(data); renderSingleMonthOverview(data); if (data.length !== 1) { drawTrafficVolumeChart(data); drawSpendChart(data); drawConversionsChart(data); drawCpaChart(data); drawQualityChart(data); } renderTable(data); renderMonthExplorer(data); }
+    function renderDashboard() { const data = selectedMonths(); syncButtons(); syncMobilePeriodPicker(); updateKpis(data); renderSingleMonthOverview(data); if (data.length !== 1) { drawTrafficVolumeChart(data); drawSpendChart(data); drawConversionsChart(data); drawCpaChart(data); drawQualityChart(data); } renderTable(data); renderMonthExplorer(data); }
     function setupCampaignToggles() { document.querySelectorAll('.month-comment').forEach(comment => { const list = comment.querySelector('.campaign-list'); if (!list || comment.querySelector('.campaign-toggle')) return; const button = document.createElement('button'); button.type = 'button'; button.className = 'campaign-toggle'; button.textContent = 'Подробно по кампаниям'; button.addEventListener('click', () => { const open = comment.classList.toggle('campaigns-open'); button.textContent = open ? 'Скрыть кампании' : 'Подробно по кампаниям'; }); comment.insertBefore(button, list); }); }
-    function initMonthExplorer() { setupCampaignToggles(); const menu = document.querySelector('[data-period-menu]'); const trigger = document.querySelector('[data-period-trigger]'); const setMenuOpen = open => { if (!menu || !trigger) return; menu.hidden = !open; trigger.setAttribute('aria-expanded', open ? 'true' : 'false'); }; trigger?.addEventListener('click', event => { event.stopPropagation(); setMenuOpen(menu.hidden); }); document.addEventListener('click', event => { if (!event.target.closest('.period-dropdown')) setMenuOpen(false); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenuOpen(false); }); document.querySelectorAll('[data-clear-period]').forEach(button => { button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); selectedKeys = []; renderDashboard(); }); }); document.querySelectorAll('.period-option').forEach(option => { option.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); const input = option.querySelector('input'); if (!input) return; if (input.dataset.range === 'year') { const year = Number(input.dataset.year); const keys = yearMonths(year).map(month => month.key); const active = fullYearSelected(year); selectedYear = year; selectedKeys = active ? selectedKeys.filter(key => !keys.includes(key)) : [...new Set([...selectedKeys, ...keys])]; } else { const key = input.dataset.month; const month = months.find(item => item.key === key); if (!month) return; const active = selectedKeys.includes(key); selectedYear = month.year; selectedKeys = active ? selectedKeys.filter(item => item !== key) : [...new Set([...selectedKeys, key])]; } renderDashboard(); }); }); renderDashboard(); }
+    function initMobileEnhancements() { const yearSelect = document.querySelector('[data-mobile-year]'); const monthSelect = document.querySelector('[data-mobile-month]'); yearSelect?.addEventListener('change', () => { selectedYear = Number(yearSelect.value) || defaultYear; selectedKeys = yearMonths(selectedYear).map(month => month.key); renderDashboard(); }); monthSelect?.addEventListener('change', () => { const value = monthSelect.value; if (value === '__custom__') return; if (!value) { selectedKeys = yearMonths(selectedYear).map(month => month.key); } else { const month = months.find(item => item.key === value); if (!month) return; selectedYear = month.year; selectedKeys = [value]; } renderDashboard(); }); document.querySelectorAll('.mobile-chart-btn').forEach(button => { button.addEventListener('click', () => setMobileChart(button.dataset.chartTarget)); }); setMobileChart('traffic'); }
+    function initMonthExplorer() { setupCampaignToggles(); initMobileEnhancements(); const menu = document.querySelector('[data-period-menu]'); const trigger = document.querySelector('[data-period-trigger]'); const setMenuOpen = open => { if (!menu || !trigger) return; menu.hidden = !open; trigger.setAttribute('aria-expanded', open ? 'true' : 'false'); }; trigger?.addEventListener('click', event => { event.stopPropagation(); setMenuOpen(menu.hidden); }); document.addEventListener('click', event => { if (!event.target.closest('.period-dropdown')) setMenuOpen(false); }); document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenuOpen(false); }); document.querySelectorAll('[data-clear-period]').forEach(button => { button.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); selectedKeys = []; renderDashboard(); }); }); document.querySelectorAll('.period-option').forEach(option => { option.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); const input = option.querySelector('input'); if (!input) return; if (input.dataset.range === 'year') { const year = Number(input.dataset.year); const keys = yearMonths(year).map(month => month.key); const active = fullYearSelected(year); selectedYear = year; selectedKeys = active ? selectedKeys.filter(key => !keys.includes(key)) : [...new Set([...selectedKeys, ...keys])]; } else { const key = input.dataset.month; const month = months.find(item => item.key === key); if (!month) return; const active = selectedKeys.includes(key); selectedYear = month.year; selectedKeys = active ? selectedKeys.filter(item => item !== key) : [...new Set([...selectedKeys, key])]; } renderDashboard(); }); }); renderDashboard(); }
     initMonthExplorer();
   </script>
 
